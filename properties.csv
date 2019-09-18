@@ -1,0 +1,41 @@
+name,cost,type,rent
+Go,0,base,-200
+Mediterranean Avenue,60,street,2
+Community chest,0,base,0
+Baltic Avenue,60,street,4
+Income Tax,0,base,200
+Reading Railroad,200,railroad,0
+Oriental Avenue,100,street,6
+Chance,0,base,0
+Vermont Avenue,100,street,6
+Connecticut Avenue,120,street,8
+Jail (visit),0,base,0
+St. Charles Place,140,street,10
+Electric Company,150,utility,0
+States Avenue,140,street,10
+Virginia Avenue,160,street,12
+Pennsylvania Railroad,200,railroad,0
+St. James Place,180,street,14
+Community chest,0,base,0
+Tennessee Avenue,180,street,14
+New York Avenue,200,street,16
+Free Parking,0,base,0
+Kentucky Avenue,220,street,18
+Chance,0,base,0
+Indiana Avenue,220,street,18
+Illinois Avenue,240,street,20
+B+O Railroad,200,railroad,0
+Atlantic Avenue,260,street,22
+Ventnor Avenue,260,street,22
+Water Works,150,utility,0
+Marvin Gardens,280,street,24
+Go to Jail,0,base,0
+Pacific Avenue,300,street,26
+North Carolina Avenue,300,street,26
+Community chest,0,base,0
+Pennsylvania Avenue,320,street,28
+Short Line,200,railroad,0
+Chance,0,base,0
+Park Place,350,street,35
+Luxury Tax,100,base,200
+Boardwalk,400,street,50
