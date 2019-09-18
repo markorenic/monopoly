@@ -1,21 +1,11 @@
+#import relavant libraries
 import csv
 import random
-from random import shuffle
 from numbers import Number
+import ctypes
 
-
-
-#starting money
-wallet = 1000
-#board is empty until the .csv is imported
 board = []
 
-games_played = 0
-
-doubles = 0
-
-finished = int(input("How many games do you want to simulate?"))
-turns = int(input("How many turns per game?"))
 
 #class initalises each square with its properties
 class Property:
@@ -33,80 +23,95 @@ def diceroll(position):
     dice2 = random.randint(1,6)
     totalroll = dice1 + dice2
 
-    if dice1 == dice2:
-        doubles = doubles + 1
+    if dice1 == dice2: #if double roll
+        doubles = doubles + 1 #increase double count by one
     else:
         doubles = 0
-    if doubles >= 3:
+    if doubles >= 3: #if three doubles in a row, go to jail
         position = 10
         return position
     else:
-        position = (position+totalroll)%40
+        position = (position+totalroll)%40 #position is the position + roll, %40 allows continues travel around the board
         return position
 
-def shuffledeck(list):
-    #how many times to repeat the process
-    iteration = random.randint(2,50)
-    temp = 0
-    while iteration > 0:
-        #random index i change positions with random index j
-        for i in range (1, len(list)):
-            for j in range (1,len(list)):
-                temp = list[i]
-                list[i]=list[j]
-                list[j]=temp
-            iteration = iteration - 1
+def shuffledeck(list): #Fisher-Yates Shuffle applied
+    #how many times to repeat the process, more iterations more shuffled the deck is
+    pointer = len(list) - 1 #index of last value in array
+    while pointer >= 0:     #loop for all values up to and including index 0
+        i = pointer         #i is the value the current pointer is pointing at
+        j = random.randint(0,pointer) #j is a random integer in the range from 0 to index of pointer
+        temp = list[i] #store data at pointer to temp var
+        list[i]=list[j] #swap the pointed data with the data in the random index
+        list[j]=temp #add temp to the index of the data that was moved to pointer
+        pointer = pointer - 1 #shuffle next index
 
+def verify(csv_file): #verifies all the data is correct data type
+    filename= csv_file #pass csv_file name to filename var
+    file = open(filename) #open the file called by the name passed
+    csv_file = csv.reader(file) #open file in reader
+    next(csv_file) #skip the header row
+    error = [] #array that will collect errors
+    types = ["base","street","railroad","utility"] #accepted values for type
 
-def verify(csv_file):
-    filename= csv_file
-    file = open(filename)
-    csv_file = csv.reader(file)
-    next(csv_file)
-    row_Num = 0
-    error = []
-    types = ["base","street","railroad","utility"]
-
-    for row in csv_file:
+    for row in csv_file:  #assign each row in csv to variable with meaningful name
         name = row[0]
         cost = row[1]
         type = row[2]
         rent = row[3]
 
-        try:
+        try: #try convert cost to int from str
             cost = int(cost)
-        except:
-            error.append("cost is not an interger")
+        except: #if cannot convert to int, add to errors
+            message = "cost is not an interger" + " in square " + name
+            error.append(message)
 
-        if not type in types:
-            error.append("type is not an correct type")
+        if not type in types: #if type is not one of the acceptable ones, add error to array
+            message = "type is not an correct type" + " in square " + name
+            error.append(message)
 
-        try:
+        try: #try convert rent into integer
             rent = int(rent)
-        except:
-            error.append("rent is not an interger")
+        except:#if cannot, add error to 
+            message = "rent is not an interger" +  " in square " + name
+            error.append(message)
 
-    if len(error) < 1:
+    if len(error) < 1: #if there is no error close the file and createboard
         file.close()
         createboard(filename)
     else:
-        print(error)
+        error = "Errors found are: " + str(error) #still need to clean up the error array
+        ctypes.windll.user32.MessageBoxW(0, error, "Warning", 1) #make alert box displaying error messages
+        
 
 def createboard(csv_file):
-    file = open(csv_file)
-    csv_file = csv.reader(file)
+    file = open(csv_file) #open file
+    csv_file = csv.reader(file) #open file in reader
     next(csv_file) #skips header row
 
-    for row in csv_file:
-        p = row
-        base = Property(p[0],p[1],p[2],p[3])
-        board.append(base)
-    print("Board succesfully initialised")
+    try:#try to create board
+        for row in csv_file: #for each row in the file
+            p = row
+            base = Property(p[0],p[1],p[2],p[3]) # create new property with its properties from csv on the board, in order
+            board.append(base)
+        print("Board succesfully initialised") #output succesful board initialisation
+    except:
+        print("Unkown error, unable to initialise board")
 
-#verify the csv file, initialise board
+
+#verify the csv file, and initialise board
 verify("properties.csv")
+#starting money
+wallet = 1000
+#board is empty until the .csv is imported
+
+#####################################################################
+# Start menu, input rules and stuff
+finished = int(input("How many games do you want to simulate?"))
+turns = int(input("How many turns per game?"))
+#####################################################################
 
 
+games_played = 0
 while games_played < finished:
 
     master_chest = [0,40,40,40,40,10,40,40,40,40,40,40,40,40,40,40]
