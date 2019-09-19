@@ -3,8 +3,61 @@ import csv
 import random
 from numbers import Number
 import ctypes
+import matplotlib.pyplot as plt; plt.rcdefaults()
+import numpy as np
+import matplotlib.pyplot as plt
 
+
+#board is empty until the .csv is imported
 board = []
+
+def bubble_sort(list): #function to sort objects by number of times stopped on
+    for i, num in enumerate(list): #itterate through indexes of the list
+        numstops = num.stops  #numstops is number of stops of the current index
+        try: #try to index the next value in list, skip if no more index
+            if list[i+1].stops < numstops: #compare num value to each value of i until it is smaller
+                list[i] = list[i+1]  #if it is swap the twp
+                list[i+1] = num 
+                bubble_sort(list) #call recursively for next index
+        except IndexError: #if no more index, exit
+            pass
+    return list #return sorted list
+
+
+def showresults(list):
+    results = [] #initiate empty array to store results
+    i = 0 #i is a counter
+    while i < len(list):#loop for every index in board[]
+        print(list[i].name, "was stepped on ", list[i].stops," times.")#print the number of stops
+        results.append(list[i].stops)#add number of stops in the array
+        i += 1
+    print(results)
+
+def sortedresults(list):
+    results = []
+    i = 0
+    bubble_sort(list)
+    while i < len(list):
+        print(list[i].name, "was stepped on ", list[i].stops," times.")
+        results.append(list[i].stops)
+        i += 1
+    print(results)
+
+def plotgraph():
+    properties = []
+    stops = []
+    i = 0
+    while i < len(board):
+        properties.append(board[i].name)
+        stops.append(board[i].stops)
+        i = i + 1
+
+    y_pos = np.arange(len(properties))
+    plt.bar(y_pos, stops, align='center', alpha=0.5)
+    plt.xticks(y_pos, properties,rotation='vertical')
+    plt.ylabel('Stops')
+    plt.title('Property')
+    plt.show()
 
 
 #class initalises each square with its properties
@@ -95,77 +148,89 @@ def createboard(csv_file):
             board.append(base)
         print("Board succesfully initialised") #output succesful board initialisation
     except:
-        print("Unkown error, unable to initialise board")
+        print("Unkown error, unable to initialise board") #if error found, error passed validation therefore its unkown.
 
+
+
+
+
+#starting money
+wallet = 1000
+
+
+def monopolyrun():
+    #####################################################################
+    # Start menu, input rules and stuff
+    finished = int(input("How many games do you want to simulate?"))
+    turns = int(input("How many turns per game?"))
+    results_sort = 0
+    while not (results_sort == 'y' or results_sort == 'n'):
+        results_sort = input("Sort the array by stops? \n (y/n)>>  ")
+    #####################################################################
+
+    games_played = 0 #reset how many games have been played
+    while games_played < finished: #while games played is less then set number of games, play another one
+
+        master_chest = [0,40,40,40,40,10,40,40,40,40,40,40,40,40,40,40] #sorted chest deck
+        chest = [i for i in master_chest] #copy sorted chest into new chest that will be shuffled
+        shuffledeck(chest)
+        
+        master_chance = [0,24,11,'Utility','Railroad',40,40,'Back',10,40,40,5,39,40,40,40]#sorted chance deck
+        chance = [i for i in master_chance] #copy sorted chance into new chest that will be shuffled
+        shuffledeck(chance)
+
+        #new game declare variables
+        doubles = 0
+        position = 0
+        gos = 0
+
+        while gos < turns: #while number of gos is less then set, play more turns
+
+            position = diceroll(position) #call diceroll passing the current position
+
+            if board[position].name == "Chance": #if board position is a chance
+                card = chance.pop(0)    #take a card from the end of the deck
+                if len(chance) == 0:    #if the deck is empty, reshuffle from master chest
+                    chance = [i for i in master_chance]
+                    shuffledeck(chance)
+                if card != 40:  #if card is not "go to Go" (index 0 = 40%40)
+                    if isinstance(card,int):#if the card is integer, move to the position shown by the card
+                        position = card
+                    elif card == "Utility": #if card is utility
+                        while board[position].type != "utility":#move to next closesed utility
+                            position = (position+1)%40
+                    elif card == "Railroad":
+                        while board[position].type != "railroad":#move to next closesed railroad
+                            position = (position+1)%40
+                    elif card == "Back":#if card is back, move three positions backwards
+                        position = position - 3
+            
+            elif board[position].name == "Community Chest": #if stepped on Community chest
+                card = chest.pop(0)#pull chest card from top of deck
+                if len(chest) == 0:#if deck is empty, reshuffle
+                    chest = [i for i in master_chest]
+                    shuffledeck(chest)
+                if card != 40:#if card is not "go to Go" (index 0 = 40%40)
+                    position = card
+            
+            if board[position].name == "Go to Jail":#if card is go to jail, move to position 10 (Jail)
+                position = 10
+            
+            board[position].stops += 1 #add one stop to position where the player ends his turn
+            print(board[position].name) #print position at which the player ended that turn
+            gos += 1 #increment gos
+        games_played +=1 #after a game is ended, incremenet number of games played
+
+    if results_sort == 'y':
+        sortedresults(board)
+    elif results_sort == 'n':
+        showresults(board)
+    else:
+        print('Error')
+    
 
 #verify the csv file, and initialise board
 verify("properties.csv")
-#starting money
-wallet = 1000
-#board is empty until the .csv is imported
-
-#####################################################################
-# Start menu, input rules and stuff
-finished = int(input("How many games do you want to simulate?"))
-turns = int(input("How many turns per game?"))
-#####################################################################
-
-
-games_played = 0
-while games_played < finished:
-
-    master_chest = [0,40,40,40,40,10,40,40,40,40,40,40,40,40,40,40]
-    chest = [i for i in master_chest]
-    shuffledeck(chest)
-    
-    master_chance = [0,24,11,'Utility','Railroad',40,40,'Back',10,40,40,5,39,40,40,40]
-    chance = [i for i in master_chance]
-    shuffledeck(chance)
-    
-    doubles = 0
-    position = 0
-    gos = 0
-
-    while gos < turns:
-        position = diceroll(position)
-
-        if board[position].name == "Chance":
-            card = chance.pop(0)
-            if len(chance) == 0:
-                chance = [i for i in master_chance]
-                shuffledeck(chance)
-            if card != 40:
-                if isinstance(card,int):
-                    position = card
-                elif card == "Utility":
-                    while board[position].type != "utility":
-                        position = (position+1)%40
-                elif card == "Railroad":
-                    while board[position].type != "railroad":
-                        position = (position+1)%40
-                elif card == "Back":
-                    position = position - 3
-        
-        elif board[position].name == "Community Chest":
-            card = chest.pop(0)
-            if len(chest) == 0:
-                chest = [i for i in master_chest]
-                shuffledeck(chest)
-            if card != 40:
-                position = card
-        
-        if board[position].name == "Go to Jail":
-            position = 10
-        
-        board[position].stops += 1
-        print(board[position].name)
-        gos += 1
-    games_played +=1
-
-results = []
-i = 0
-while i < len(board):
-    print(board[i].name, "stepped: ", board[i].stops)
-    results.append(board[i].stops)
-    i += 1
-print(results)
+monopolyrun()
+plotgraph()
+##############
