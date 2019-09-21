@@ -63,11 +63,12 @@ def plotgraph():
 
 #class initalises each square with its properties
 class Property:
-    def __init__(self,name, cost, type, rent):
+    def __init__(self,name, cost, type, rent, color):
         self.name = name
         self.cost = cost
         self.type = type
         self.rent = rent
+        self.color = color
         self.stops = 0
 
 #dice roll
@@ -98,6 +99,7 @@ def shuffledeck(list): #Fisher-Yates Shuffle applied
         list[i]=list[j] #swap the pointed data with the data in the random index
         list[j]=temp #add temp to the index of the data that was moved to pointer
         pointer = pointer - 1 #shuffle next index
+    return list
 
 def verify(csv_file): #verifies all the data is correct data type
     filename= csv_file #pass csv_file name to filename var
@@ -112,6 +114,7 @@ def verify(csv_file): #verifies all the data is correct data type
         cost = row[1]
         type = row[2]
         rent = row[3]
+        color = row[4]
 
         try: #try convert cost to int from str
             cost = int(cost)
@@ -145,7 +148,7 @@ def createboard(csv_file):
     try:#try to create board
         for row in csv_file: #for each row in the file
             p = row
-            base = Property(p[0],p[1],p[2],p[3]) # create new property with its properties from csv on the board, in order
+            base = Property(p[0],p[1],p[2],p[3],p[4]) # create new property with its properties from csv on the board, in order
             board.append(base)
         print("Board succesfully initialised") #output succesful board initialisation
     except:
@@ -155,12 +158,12 @@ def resetdeck(deck):
     if deck == "chest":
         master_chest = [0,40,40,40,40,10,40,40,40,40,40,40,40,40,40,40] #sorted chest deck
         chest = [i for i in master_chest] #copy sorted chest into new chest that will be shuffled
-        shuffledeck(chest)
+        chest = shuffledeck(chest)
         return chest
     elif deck == "chance":
         master_chance = [0,24,11,'Utility','Railroad',40,40,'Back',10,40,40,5,39,40,40,40]#sorted chance deck
         chance = [i for i in master_chance] #copy sorted chance into new chest that will be shuffled
-        shuffledeck(chance)
+        chance = shuffledeck(chance)
         return chance
 
 
@@ -193,9 +196,10 @@ def monopolyrun():#version of the game where one player continuesly travels arou
             position = diceroll(position) #call diceroll passing the current position
 
             if board[position].name == "Chance": #if board position is a chance
+
                 card = chance.pop(0)    #take a card from the end of the deck
                 if len(chance) == 0:    #if the deck is empty, reshuffle from master chest
-                    resetdeck(chance)
+                    chance = resetdeck("chance")
                 if card != 40:  #if card is not "go to Go" (index 0 = 40%40)
                     if isinstance(card,int):#if the card is integer, move to the position shown by the card
                         position = card
@@ -208,10 +212,10 @@ def monopolyrun():#version of the game where one player continuesly travels arou
                     elif card == "Back":#if card is back, move three positions backwards
                         position = position - 3
             
-            elif board[position].name == "Community Chest": #if stepped on Community chest
+            elif board[position].name == "Community chest": #if stepped on Community chest
                 card = chest.pop(0)#pull chest card from top of deck
                 if len(chest) == 0:#if deck is empty, reshuffle
-                    resetdeck(chest)
+                    chest = resetdeck("chest")
                 if card != 40:#if card is not "go to Go" (index 0 = 40%40)
                     position = card
             
