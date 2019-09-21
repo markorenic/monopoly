@@ -5,7 +5,8 @@ from numbers import Number
 import ctypes
 import matplotlib.pyplot as plt; plt.rcdefaults()
 import numpy as np
-import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+from matplotlib import style
 
 
 #board is empty until the .csv is imported
@@ -19,7 +20,7 @@ def bubble_sort(list): #function to sort objects by number of times stopped on
                 list[i] = list[i+1]  #if it is swap the twp
                 list[i+1] = num 
                 bubble_sort(list) #call recursively for next index
-        except IndexError: #if no more index, exit
+        except IndexError: #if no more index, exit, change to if len = 1
             pass
     return list #return sorted list
 
@@ -150,15 +151,23 @@ def createboard(csv_file):
     except:
         print("Unkown error, unable to initialise board") #if error found, error passed validation therefore its unkown.
 
+def resetdeck(deck):
+    if deck == "chest":
+        master_chest = [0,40,40,40,40,10,40,40,40,40,40,40,40,40,40,40] #sorted chest deck
+        chest = [i for i in master_chest] #copy sorted chest into new chest that will be shuffled
+        shuffledeck(chest)
+        return chest
+    elif deck == "chance":
+        master_chance = [0,24,11,'Utility','Railroad',40,40,'Back',10,40,40,5,39,40,40,40]#sorted chance deck
+        chance = [i for i in master_chance] #copy sorted chance into new chest that will be shuffled
+        shuffledeck(chance)
+        return chance
 
 
 
 
-#starting money
-wallet = 1000
 
-
-def monopolyrun():
+def monopolyrun():#version of the game where one player continuesly travels around the board
     #####################################################################
     # Start menu, input rules and stuff
     finished = int(input("How many games do you want to simulate?"))
@@ -170,14 +179,9 @@ def monopolyrun():
 
     games_played = 0 #reset how many games have been played
     while games_played < finished: #while games played is less then set number of games, play another one
-
-        master_chest = [0,40,40,40,40,10,40,40,40,40,40,40,40,40,40,40] #sorted chest deck
-        chest = [i for i in master_chest] #copy sorted chest into new chest that will be shuffled
-        shuffledeck(chest)
         
-        master_chance = [0,24,11,'Utility','Railroad',40,40,'Back',10,40,40,5,39,40,40,40]#sorted chance deck
-        chance = [i for i in master_chance] #copy sorted chance into new chest that will be shuffled
-        shuffledeck(chance)
+        chest = resetdeck("chest")
+        chance = resetdeck("chance")
 
         #new game declare variables
         doubles = 0
@@ -191,8 +195,7 @@ def monopolyrun():
             if board[position].name == "Chance": #if board position is a chance
                 card = chance.pop(0)    #take a card from the end of the deck
                 if len(chance) == 0:    #if the deck is empty, reshuffle from master chest
-                    chance = [i for i in master_chance]
-                    shuffledeck(chance)
+                    resetdeck(chance)
                 if card != 40:  #if card is not "go to Go" (index 0 = 40%40)
                     if isinstance(card,int):#if the card is integer, move to the position shown by the card
                         position = card
@@ -208,8 +211,7 @@ def monopolyrun():
             elif board[position].name == "Community Chest": #if stepped on Community chest
                 card = chest.pop(0)#pull chest card from top of deck
                 if len(chest) == 0:#if deck is empty, reshuffle
-                    chest = [i for i in master_chest]
-                    shuffledeck(chest)
+                    resetdeck(chest)
                 if card != 40:#if card is not "go to Go" (index 0 = 40%40)
                     position = card
             
@@ -217,7 +219,7 @@ def monopolyrun():
                 position = 10
             
             board[position].stops += 1 #add one stop to position where the player ends his turn
-            print(board[position].name) #print position at which the player ended that turn
+            print(board[position].name) #print position at which the player ended that turn)
             gos += 1 #increment gos
         games_played +=1 #after a game is ended, incremenet number of games played
 
@@ -228,6 +230,18 @@ def monopolyrun():
     else:
         print('Error')
     
+
+
+
+
+
+
+
+
+
+
+
+
 
 #verify the csv file, and initialise board
 verify("properties.csv")
