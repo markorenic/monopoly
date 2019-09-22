@@ -200,7 +200,7 @@ def monopolyrun():#version of the game where one player continuesly travels arou
                 card = chance.pop(0)    #take a card from the end of the deck
                 if len(chance) == 0:    #if the deck is empty, reshuffle from master chest
                     chance = resetdeck("chance")
-                if card != 40:  #if card is not "go to Go" (index 0 = 40%40)
+                if card != 40:#if card is a card that moves a player (40 is a placeholder card that keeps the player on the community chest square)
                     if isinstance(card,int):#if the card is integer, move to the position shown by the card
                         position = card
                     elif card == "Utility": #if card is utility
@@ -216,7 +216,7 @@ def monopolyrun():#version of the game where one player continuesly travels arou
                 card = chest.pop(0)#pull chest card from top of deck
                 if len(chest) == 0:#if deck is empty, reshuffle
                     chest = resetdeck("chest")
-                if card != 40:#if card is not "go to Go" (index 0 = 40%40)
+                if card != 40:#if card is a card that moves a player (40 is a placeholder card that keeps the player on the community chest square)
                     position = card
             
             if board[position].name == "Go to Jail":#if card is go to jail, move to position 10 (Jail)
