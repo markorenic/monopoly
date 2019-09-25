@@ -73,13 +73,17 @@ class Property:
 
 #dice roll
 def diceroll(position):
-    doubles = 0
+    
     dice1 = random.randint(1,6) 
     dice2 = random.randint(1,6)
     totalroll = dice1 + dice2
 
     if dice1 == dice2: #if double roll
-        doubles = doubles + 1 #increase double count by one
+        try:
+            doubles = doubles + 1 #increase double count by one
+            diceroll(position)
+        except:
+            doubles = 1
     else:
         doubles = 0
     if doubles >= 3: #if three doubles in a row, go to jail
