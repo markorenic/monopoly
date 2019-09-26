@@ -152,21 +152,21 @@ def createboard(csv_file):
     try:#try to create board
         for row in csv_file: #for each row in the file
             p = row
-            base = Property(p[0],p[1],p[2],p[3],p[4]) # create new property with its properties from csv on the board, in order
+            base = Property(p[0],p[1],p[2],p[3],p[4]) # create starting property with its properties from csv on the board, in order
             board.append(base)
         print("Board succesfully initialised") #output succesful board initialisation
     except:
         print("Unkown error, unable to initialise board") #if error found, error passed validation therefore its unkown.
 
 def resetdeck(deck):
-    if deck == "chest":
-        master_chest = [0,40,40,40,40,10,40,40,40,40,40,40,40,40,40,40] #sorted chest deck
-        chest = [i for i in master_chest] #copy sorted chest into new chest that will be shuffled
-        chest = shuffledeck(chest)
-        return chest
+    if deck == "community":
+        starting_community = [0,40,40,40,40,10,40,40,40,40,40,40,40,40,40,40] #sorted community deck
+        community = [i for i in starting_community] #copy sorted community into starting community that will be shuffled
+        community = shuffledeck(community)
+        return community
     elif deck == "chance":
-        master_chance = [0,24,11,'Utility','Railroad',40,40,'Back',10,40,40,5,39,40,40,40]#sorted chance deck
-        chance = [i for i in master_chance] #copy sorted chance into new chest that will be shuffled
+        starting_chance = [0,24,11,'Utility','Railroad',40,40,'Back',10,40,40,5,39,40,40,40]#sorted chance deck
+        chance = [i for i in starting_chance] #copy sorted chance into starting community that will be shuffled
         chance = shuffledeck(chance)
         return chance
 
@@ -187,10 +187,10 @@ def monopolyrun():#version of the game where one player continuesly travels arou
     games_played = 0 #reset how many games have been played
     while games_played < finished: #while games played is less then set number of games, play another one
         
-        chest = resetdeck("chest")
+        community = resetdeck("community")
         chance = resetdeck("chance")
 
-        #new game declare variables
+        #starting game declare variables
         doubles = 0
         position = 0
         gos = 0
@@ -202,9 +202,9 @@ def monopolyrun():#version of the game where one player continuesly travels arou
             if board[position].name == "Chance": #if board position is a chance
 
                 card = chance.pop(0)    #take a card from the end of the deck
-                if len(chance) == 0:    #if the deck is empty, reshuffle from master chest
+                if len(chance) == 0:    #if the deck is empty, reshuffle from starting community
                     chance = resetdeck("chance")
-                if card != 40:#if card is a card that moves a player (40 is a placeholder card that keeps the player on the community chest square)
+                if card != 40:#if card is a card that moves a player (40 is a placeholder card that keeps the player on the community community square)
                     if isinstance(card,int):#if the card is integer, move to the position shown by the card
                         position = card
                     elif card == "Utility": #if card is utility
@@ -216,11 +216,11 @@ def monopolyrun():#version of the game where one player continuesly travels arou
                     elif card == "Back":#if card is back, move three positions backwards
                         position = position - 3
             
-            elif board[position].name == "Community chest": #if stepped on Community chest
-                card = chest.pop(0)#pull chest card from top of deck
-                if len(chest) == 0:#if deck is empty, reshuffle
-                    chest = resetdeck("chest")
-                if card != 40:#if card is a card that moves a player (40 is a placeholder card that keeps the player on the community chest square)
+            elif board[position].name == "Community community": #if stepped on Community community
+                card = community.pop(0)#pull community card from top of deck
+                if len(community) == 0:#if deck is empty, reshuffle
+                    community = resetdeck("community")
+                if card != 40:#if card is a card that moves a player (40 is a placeholder card that keeps the player on the community community square)
                     position = card
             
             if board[position].name == "Go to Jail":#if card is go to jail, move to position 10 (Jail)
