@@ -366,21 +366,22 @@ def strategymonopoly():
         player = Player(playercounter+1,True,0)
         players.append(player)
         i = i + 1
-    playercounter = playercounter + i
+        playercounter = playercounter + 1
+    
 
     i = 0
     while i < players_with_minbalance:
         player = Player(playercounter+1,False,random.randint(0,100))
         players.append(player)
         i = i + 1
-    playercounter = playercounter + i
+        playercounter = playercounter + 1
 
     i = 0
     while i < players_with_both:
         player = Player(playercounter+1,True,random.randint(0,100))
         players.append(player)
         i = i + 1
-    playercounter = playercounter + i
+        playercounter = playercounter + 1
 
     while playercounter < n_players:
         player = Player(playercounter+1,False,random.randint(0,1500))
