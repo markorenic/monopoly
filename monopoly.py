@@ -71,6 +71,15 @@ class Property:
         self.color = color
         self.stops = 0
 
+class Player:
+    def __init__(self,name, preforder, minbalance):
+        self.name = name
+        self.balance = 1500
+        self.position = 0
+        self.jail_pass = 0
+        self.preforder = preforder
+        self.minbalance = minbalance
+
 #dice roll
 def diceroll(position):
     
@@ -277,6 +286,123 @@ def position(chance, community, player):
 
 
 
+def strategymonopoly():
+
+    #initiate number of players
+    validation = False
+    while validation == False:
+        n_players = input("How many players do you want to simulate? (Must be an integer) \n >>")
+        try:
+            n_players = int(n_players)
+            if n_players < 2:
+                print("Must be at least 2 players")
+                n_players = "error"
+            n_players = int(n_players)
+            validation = True
+            print("Number of players is ", n_players)
+        except:
+            validation = False
+
+    validation = False
+    while validation == False:
+        players_with_logic = input("How many players have prefered properties? \n >>")
+        try:
+            players_with_logic = int(players_with_logic)
+            if players_with_logic < 0:
+                print("Input must be a positive integer, try again. \n ")
+                players_with_logic = "error"
+            if players_with_logic > n_players:
+                print("Number exceeds the total number of players, which is ", n_players)
+                players_with_logic = "error"
+            players_with_logic = int(players_with_logic)
+            validation = True
+            print("Number of players with prefered properties ", players_with_logic)
+        except:
+            validation = False
+
+    validation = False
+    while validation == False:
+        players_with_minbalance = input("How many players have a minimum balance?\n >>")
+        try:
+            players_with_minbalance = int(players_with_minbalance)
+            if players_with_minbalance < 0:
+                print("Input must be a positive integer, try again.\n")
+                players_with_minbalance = "error"
+            if (players_with_minbalance + players_with_logic) > n_players:
+                print("Number or players exceeds the total number of players, Players available = ", (n_players - players_with_logic))
+                players_with_minbalance = "error"
+            players_with_minbalance = int(players_with_minbalance)
+            validation = True
+            print("Number of players with minimal balance ", players_with_minbalance)
+        except:
+            validation = False
+
+    validation = False
+    while validation == False:
+        players_with_both = input("How many player with both prefered properties and minimum balance?\n >>")
+        try:
+            players_with_both = int(players_with_both)
+            if players_with_both < 0:
+                print("Input must be a positive integer, try again.\n")
+                players_with_both = "error"
+            available = n_players - players_with_logic - players_with_minbalance
+            if players_with_both > (available):
+                print("Number of players exceeds the possible number, Players available = ", (available))
+                players_with_both = "error"
+            players_with_both = int(players_with_both)
+            validation = True
+            print("Number of players with both atributes is ", players_with_both)
+            dummies = n_players - players_with_logic - players_with_minbalance - players_with_both
+            print("Players left with random no strategy (buy every property they can afford) is ", dummies)
+        except:
+            validation = False
+    
+    
+    players = []
+    playercounter = 0
+    i = 0
+
+    while i < players_with_logic:
+        player = Player(playercounter+1,True,0)
+        players.append(player)
+        i = i + 1
+    playercounter = playercounter + i
+
+    i = 0
+    while i < players_with_minbalance:
+        player = Player(playercounter+1,False,random.randint(0,100))
+        players.append(player)
+        i = i + 1
+    playercounter = playercounter + i
+
+    i = 0
+    while i < players_with_both:
+        player = Player(playercounter+1,True,random.randint(0,100))
+        players.append(player)
+        i = i + 1
+    playercounter = playercounter + i
+
+    while playercounter < n_players:
+        player = Player(playercounter+1,False,random.randint(0,1500))
+        players.append(player)
+        playercounter = playercounter + 1
+    
+
+    i = 0    
+    print("The player list is as follows:")
+    for i in range (0,len(players)):
+        print("_________________________________________________________")
+        print("Player name: Player", players[i].name)
+        print("Player has prefered properties: ", players[i].preforder)
+        print("Player minbalance = ", players[i].minbalance)
+
+        i = i + 1
+#add change atributes for each player
+#make function to call with (player,variable to change, change to value)
+
+
+
+    
 
 
 
@@ -284,8 +410,9 @@ def position(chance, community, player):
 
 
 
+strategymonopoly()
 #verify the csv file, and initialise board
-verify("properties.csv")
-monopolyrun()
-plotgraph()
+#verify("properties.csv")
+#monopolyrun()
+#plotgraph()
 ##############
