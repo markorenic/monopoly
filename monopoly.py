@@ -160,12 +160,12 @@ def createboard(csv_file):
 
 def resetdeck(deck):
     if deck == "community":
-        starting_community = [0,40,40,40,40,10,40,40,40,40,40,40,40,40,40,40] #sorted community deck
+        starting_community = [0,"Go to Go and Collect 200","Pay 50","Collect 50","Get Out of Jail Free",10,"Collect 50","Collect 100","Collect 20","Collect 100","Pay 50","Pay 50","Collect 25","Pay $40 per property","Collect 10","Collect 100"] #sorted community deck
         community = [i for i in starting_community] #copy sorted community into starting community that will be shuffled
         community = shuffledeck(community)
         return community
     elif deck == "chance":
-        starting_chance = [0,24,11,'Utility','Railroad',40,40,'Back',10,40,40,5,39,40,40,40]#sorted chance deck
+        starting_chance = [0,24,11,'Utility','Railroad',"Collect 50","Get out of Jail Free",'Back',10,"Pay 25 per property","Pay 15",5,39,"Pay each player 50","Collect 50","Collect $100"]#sorted chance deck
         chance = [i for i in starting_chance] #copy sorted chance into starting community that will be shuffled
         chance = shuffledeck(chance)
         return chance
@@ -239,7 +239,40 @@ def monopolyrun():#version of the game where one player continuesly travels arou
         print('Error')
     
 
+def position(chance, community, player):
 
+    position = diceroll(position) #call diceroll passing the current position
+
+    if board[position].name == "Chance": #if board position is a chance
+
+        card = chance.pop(0)    #take a card from the end of the deck
+        if len(chance) == 0:    #if the deck is empty, reshuffle from starting community
+            chance = resetdeck("chance")
+        if card != 40:#if card is a card that moves a player (40 is a placeholder card that keeps the player on the community community square)
+            if isinstance(card,int):#if the card is integer, move to the position shown by the card
+                position = card
+            elif card == "Utility": #if card is utility
+                while board[position].type != "utility":#move to next closesed utility
+                    position = (position+1)%40
+            elif card == "Railroad":
+                while board[position].type != "railroad":#move to next closesed railroad
+                    position = (position+1)%40
+            elif card == "Back":#if card is back, move three positions backwards
+                position = position - 3
+    
+    elif board[position].name == "Community community": #if stepped on Community community
+        card = community.pop(0)#pull community card from top of deck
+        if len(community) == 0:#if deck is empty, reshuffle
+            community = resetdeck("community")
+        if card != 40:#if card is a card that moves a player (40 is a placeholder card that keeps the player on the community community square)
+            position = card
+    
+    if board[position].name == "Go to Jail":#if card is go to jail, move to position 10 (Jail)
+        position = 10
+    
+    board[position].stops += 1 #add one stop to position where the player ends his turn
+    print(board[position].name) #print position at which the player ended that turn)
+    gos += 1 #increment gos
 
 
 
