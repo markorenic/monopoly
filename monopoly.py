@@ -70,6 +70,7 @@ class Property:
         self.rent = rent
         self.color = color
         self.stops = 0
+        self.owner = "Bank"
 
 class Player:
     def __init__(self,name, preforder, minbalance):
@@ -81,8 +82,9 @@ class Player:
         self.minbalance = minbalance
 
 #dice roll
-def diceroll(position):
+def diceroll(position,doubles):
     
+
     dice1 = random.randint(1,6) 
     dice2 = random.randint(1,6)
     totalroll = dice1 + dice2
@@ -90,9 +92,10 @@ def diceroll(position):
     if dice1 == dice2: #if double roll
         try:
             doubles = doubles + 1 #increase double count by one
-            diceroll(position)
+            diceroll(position,doubles)
         except:
             doubles = 1
+            diceroll(position,1)
     else:
         doubles = 0
     if doubles >= 3: #if three doubles in a row, go to jail
@@ -206,31 +209,36 @@ def monopolyrun():#version of the game where one player continuesly travels arou
 
         while gos < turns: #while number of gos is less then set, play more turns
 
-            position = diceroll(position) #call diceroll passing the current position
+            position = diceroll(position,0) #call diceroll passing the current position
 
             if board[position].name == "Chance": #if board position is a chance
 
                 card = chance.pop(0)    #take a card from the end of the deck
                 if len(chance) == 0:    #if the deck is empty, reshuffle from starting community
                     chance = resetdeck("chance")
-                if card != 40:#if card is a card that moves a player (40 is a placeholder card that keeps the player on the community community square)
-                    if isinstance(card,int):#if the card is integer, move to the position shown by the card
-                        position = card
-                    elif card == "Utility": #if card is utility
-                        while board[position].type != "utility":#move to next closesed utility
-                            position = (position+1)%40
-                    elif card == "Railroad":
-                        while board[position].type != "railroad":#move to next closesed railroad
-                            position = (position+1)%40
-                    elif card == "Back":#if card is back, move three positions backwards
-                        position = position - 3
+                    
+                if isinstance(card,int):#if the card is integer, move to the position shown by the card
+                    position = card
+                elif card == "Utility": #if card is utility
+                    while board[position].type != "utility":#move to next closesed utility
+                        position = (position+1)%40
+                elif card == "Railroad":
+                    while board[position].type != "railroad":#move to next closesed railroad
+                        position = (position+1)%40
+                elif card == "Back":#if card is back, move three positions backwards
+                    position = position - 3
+                else:
+                    position = position
+                        
             
-            elif board[position].name == "Community community": #if stepped on Community community
+            elif board[position].name == "Community chest": #if stepped on Community community
                 card = community.pop(0)#pull community card from top of deck
                 if len(community) == 0:#if deck is empty, reshuffle
                     community = resetdeck("community")
-                if card != 40:#if card is a card that moves a player (40 is a placeholder card that keeps the player on the community community square)
+                if isinstance(card,int):
                     position = card
+                else:
+                    position = position
             
             if board[position].name == "Go to Jail":#if card is go to jail, move to position 10 (Jail)
                 position = 10
@@ -248,40 +256,38 @@ def monopolyrun():#version of the game where one player continuesly travels arou
         print('Error')
     
 
-def position(chance, community, player):
+def getposition(chance, community, position):
 
-    position = diceroll(position) #call diceroll passing the current position
+    position = diceroll(position,0) #call diceroll passing the current position
 
     if board[position].name == "Chance": #if board position is a chance
 
         card = chance.pop(0)    #take a card from the end of the deck
         if len(chance) == 0:    #if the deck is empty, reshuffle from starting community
             chance = resetdeck("chance")
-        if card != 40:#if card is a card that moves a player (40 is a placeholder card that keeps the player on the community community square)
-            if isinstance(card,int):#if the card is integer, move to the position shown by the card
-                position = card
-            elif card == "Utility": #if card is utility
-                while board[position].type != "utility":#move to next closesed utility
-                    position = (position+1)%40
-            elif card == "Railroad":
-                while board[position].type != "railroad":#move to next closesed railroad
-                    position = (position+1)%40
-            elif card == "Back":#if card is back, move three positions backwards
-                position = position - 3
+        if isinstance(card,int):#if the card is integer, move to the position shown by the card
+            position = card
+        elif card == "Utility": #if card is utility
+            while board[position].type != "utility":#move to next closesed utility
+                position = (position+1)%40
+        elif card == "Railroad":
+            while board[position].type != "railroad":#move to next closesed railroad
+                position = (position+1)%40
+        elif card == "Back":#if card is back, move three positions backwards
+            position = position - 3
     
-    elif board[position].name == "Community community": #if stepped on Community community
+    elif board[position].name == "Community chest": #if stepped on Community community
         card = community.pop(0)#pull community card from top of deck
         if len(community) == 0:#if deck is empty, reshuffle
             community = resetdeck("community")
-        if card != 40:#if card is a card that moves a player (40 is a placeholder card that keeps the player on the community community square)
+        if isinstance(card,int):
             position = card
     
     if board[position].name == "Go to Jail":#if card is go to jail, move to position 10 (Jail)
         position = 10
     
     board[position].stops += 1 #add one stop to position where the player ends his turn
-    print(board[position].name) #print position at which the player ended that turn)
-    gos += 1 #increment gos
+    return(position%40) #print position at which the player ended that turn)
 
 
 
@@ -362,6 +368,7 @@ def strategymonopoly():
     playercounter = 0
     i = 0
 
+    #create players
     while i < players_with_logic:
         player = Player(playercounter+1,True,0)
         players.append(player)
@@ -388,7 +395,7 @@ def strategymonopoly():
         players.append(player)
         playercounter = playercounter + 1
     
-
+    #print all the players and their atributes
     i = 0    
     print("The player list is as follows:")
     for i in range (0,len(players)):
@@ -398,12 +405,104 @@ def strategymonopoly():
         print("Player minbalance = ", players[i].minbalance)
 
         i = i + 1
+    
+    n_games = input("How many games do you wish to simulate?")
+    validation = False
+    while validation == False:
+        try:
+            if(int(n_games)>0):
+                validation = True
+            else:
+                n_games = "error"
+            n_games = int(n_games)
+        except:
+            n_games = int(input("How many games do you wish to simulate? (Must be a positive integer)"))
+    
+    gamesplayed = 0
+
+    while gamesplayed < n_games :
+        #start new game
+        community = resetdeck("community")
+        chance = resetdeck("chance")
+        doubles = 0
+        gos = 0
+        position = 0
+        turn = 0
+        i = 0
+        j = 0
+
+        #while there are more then 1 player left (when there is one, that one is the winner)
+        while len(players)>1:
+            #assign the correct class of player to player for this turn
+            player = players[i]
+            #get position of player
+            player.position = getposition(chance,community,player.position)
+
+            print(players[i].name, " is on position ", players[i].position)#print
+
+            if len(chance) == 0:    #if the deck is empty, reshuffle from starting community
+                chance = resetdeck("chance")
+            if len(community) == 0:    #if the deck is empty, reshuffle from starting community
+                community = resetdeck("community")
+            
+            #if the board type is not a base item (meaning it can be bought)
+            if board[player.position].type != "base":
+                
+                if(board[player.position].owner != "Bank"): #if the bank is not the owner, a player is
+                    j = 0
+                    player.balance = player.balance - int(board[player.position].rent)  #player pays rent
+                    while players[j].name != board[player.position].owner:  #find the player who's property this is
+                        j = (j + 1)%n_players
+                    players[j].balance = players[j].balance + int(board[player.position].rent)#pay that player the rent
+                    j = 0#reset j
+
+                if board[player.position].owner == "Bank":#if the bank owns the property
+                    
+                    able2buy = ["utility","railroad","street"]#type of properties that can be bought
+                    if board[player.position].type in able2buy:
+                        #player buys property
+                        if player.balance > int(board[player.position].cost):#if player has enough money
+                            if (player.balance - int(board[player.position].cost)) > player.minbalance:#if the players minimum balance atribute is lower then the money he will have after buying the property
+                                board[player.position].owner = player.name#trasnfer ownership to player
+                                player.balance = player.balance - int(board[player.position].cost)#player pays the cost of property
+                                print("Player ", player.name," bought ", board[player.position].name)#output the purchase in terminal
+                    
+                    else:
+                        player.balance = player.balance - int(board[player.position].rent)#if the property cannot be bought, player pays the fee of it (in case of Go fee is -200 which ads 200 to the players budget)
+           
+            elif board[player.position].type == "base":#if the property cannot be bought
+                        player.balance = player.balance - int(board[player.position].rent)#if the property cannot be bought, player pays the fee of it (in case of Go fee is -200 which ads 200 to the players budget)
+            
+            print("_________________________________________________________This was turn number ",gos, "In game ",gamesplayed + 1 )   
+
+            if player.balance < 0:
+                player_deleted = False
+                j = 0
+                while j < 40:
+                    if board[j].owner == player.name:
+                        board[j].owner = board[player.position].owner
+                    j = (j + 1)
+
+                players.pop(i)
+                i = (i)%len(players)
+            
+            else:
+                i = (i + 1)%len(players)
+            
+            gos = gos + 1
+            
+        print("Winner = ", players[0].name)
+        gamesplayed = gamesplayed + 1
+    sortedresults(board)
+    plotgraph()
+
+
+
 #add change atributes for each player
 #make function to call with (player,variable to change, change to value)
 
 
 
-    
 
 
 
@@ -411,9 +510,12 @@ def strategymonopoly():
 
 
 
+
+
+verify("properties.csv")
 strategymonopoly()
 #verify the csv file, and initialise board
-#verify("properties.csv")
+
 #monopolyrun()
-#plotgraph()
+plotgraph()
 ##############
