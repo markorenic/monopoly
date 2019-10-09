@@ -177,7 +177,7 @@ def resetdeck(deck):
         community = shuffledeck(community)
         return community
     elif deck == "chance":
-        starting_chance = [0,24,11,'Utility','Railroad',"Collect 50","Get out of Jail Free",'Back',10,"Pay 25 per property","Pay 15",5,39,"Pay each player 50","Collect 50","Collect $100"]#sorted chance deck
+        starting_chance = [0,24,11,'Utility','Railroad',"Collect 50","Get out of Jail Free",'Back',10,"Pay 25 per property","Pay 15",5,39,"Pay 50","Collect 50","Collect 100"]#sorted chance deck
         chance = [i for i in starting_chance] #copy sorted chance into starting community that will be shuffled
         chance = shuffledeck(chance)
         return chance
@@ -256,8 +256,9 @@ def monopolyrun():#version of the game where one player continuesly travels arou
         print('Error')
     
 
-def getposition(chance, community, position):
+def getposition(chance, community, player):
 
+    position = player.position
     position = diceroll(position,0) #call diceroll passing the current position
 
     if board[position].name == "Chance": #if board position is a chance
@@ -270,23 +271,61 @@ def getposition(chance, community, position):
         elif card == "Utility": #if card is utility
             while board[position].type != "utility":#move to next closesed utility
                 position = (position+1)%40
+                if position == 0:
+                    player.balance = player.balance + 200
         elif card == "Railroad":
             while board[position].type != "railroad":#move to next closesed railroad
                 position = (position+1)%40
+                if position == 0:
+                    player.balance = player.balance + 200
         elif card == "Back":#if card is back, move three positions backwards
             position = position - 3
-    
+
+        
+
     elif board[position].name == "Community chest": #if stepped on Community community
         card = community.pop(0)#pull community card from top of deck
         if len(community) == 0:#if deck is empty, reshuffle
             community = resetdeck("community")
         if isinstance(card,int):
             position = card
+        
+        elif card == "Go to Go and Collect 200":
+            position = 0
+            player.balance = player.balance + 200
+
+        elif card == "Pay 50":
+            player.balance = player.balance - 50
+
+        elif card == "Get out of Jail Free":
+            player.jail_pass = 1
+
+        elif card == "Pay 15":
+            player.balance = player.balance - 15
+        
+        elif card == "Collect 50":
+            player.balance = player.balance + 50
+
+        elif card == "Collect 100":
+            player.balance = player.balance + 100
+        
+        elif card == "Collect 20":
+            player.balance = player.balance + 20
+        
+        elif card == "Pay $40 per property":
+            #TODO
+            pass
+        elif card == "Collect 10":
+            player.balance = player.balance + 10
+
     
     if board[position].name == "Go to Jail":#if card is go to jail, move to position 10 (Jail)
         position = 10
     
     board[position].stops += 1 #add one stop to position where the player ends his turn
+    if position >=40:
+        player.balance = player.balance + 200
+    
     return(position%40) #print position at which the player ended that turn)
 
 
@@ -436,7 +475,8 @@ def strategymonopoly():
             #assign the correct class of player to player for this turn
             player = players[i]
             #get position of player
-            player.position = getposition(chance,community,player.position)
+            player.position = getposition(chance,community,player)
+            
 
             print(players[i].name, " is on position ", players[i].position)#print
 
