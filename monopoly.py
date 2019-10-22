@@ -340,28 +340,27 @@ def strategymonopoly():
         try:
             n_players = int(n_players)
             if n_players < 2:
-                print("Must be at least 2 players")
-                n_players = "error"
+                print("Only one player selected. Do you want to simulate just one player traveling around the board? (y/n)")
+                answer = input(">>")
+                if answer == "y":
+                    monopolyrun()
+                    validation == True
+                else:
+                    while validation == False:
+                        print("Try inputing a number of players again (min 2)")
+                        try:
+                            answer = int(input("How many players do you want to simulate? (Must be an integer) \n >>"))
+                            if answer >= 2:
+                                n_players = answer
+                                validation = True
+                            else:
+                                RuntimeError
+                        except:
+                            validation = False
+                    
             n_players = int(n_players)
             validation = True
             print("Number of players is ", n_players)
-        except:
-            validation = False
-
-    validation = False
-    while validation == False:
-        players_with_logic = input("How many players have prefered properties? \n >>")
-        try:
-            players_with_logic = int(players_with_logic)
-            if players_with_logic < 0:
-                print("Input must be a positive integer, try again. \n ")
-                players_with_logic = "error"
-            if players_with_logic > n_players:
-                print("Number exceeds the total number of players, which is ", n_players)
-                players_with_logic = "error"
-            players_with_logic = int(players_with_logic)
-            validation = True
-            print("Number of players with prefered properties ", players_with_logic)
         except:
             validation = False
 
@@ -382,49 +381,17 @@ def strategymonopoly():
         except:
             validation = False
 
-    validation = False
-    while validation == False:
-        players_with_both = input("How many player with both prefered properties and minimum balance?\n >>")
-        try:
-            players_with_both = int(players_with_both)
-            if players_with_both < 0:
-                print("Input must be a positive integer, try again.\n")
-                players_with_both = "error"
-            available = n_players - players_with_logic - players_with_minbalance
-            if players_with_both > (available):
-                print("Number of players exceeds the possible number, Players available = ", (available))
-                players_with_both = "error"
-            players_with_both = int(players_with_both)
-            validation = True
-            print("Number of players with both atributes is ", players_with_both)
-            dummies = n_players - players_with_logic - players_with_minbalance - players_with_both
-            print("Players left with random no strategy (buy every property they can afford) is ", dummies)
-        except:
-            validation = False
-    
+   
     
     players = []
     playercounter = 0
     i = 0
 
     #create players
-    while i < players_with_logic:
-        player = Player(playercounter+1,True,0)
-        players.append(player)
-        i = i + 1
-        playercounter = playercounter + 1
-    
 
     i = 0
     while i < players_with_minbalance:
         player = Player(playercounter+1,False,random.randint(0,100))
-        players.append(player)
-        i = i + 1
-        playercounter = playercounter + 1
-
-    i = 0
-    while i < players_with_both:
-        player = Player(playercounter+1,True,random.randint(0,100))
         players.append(player)
         i = i + 1
         playercounter = playercounter + 1
@@ -494,6 +461,7 @@ def strategymonopoly():
                     while players[j].name != board[player.position].owner:  #find the player who's property this is
                         j = (j + 1)%n_players
                     players[j].balance = players[j].balance + int(board[player.position].rent)#pay that player the rent
+                    print(player.name, " payed ", int(board[player.position].rent), "to ", players[j].name)
                     j = 0#reset j
 
                 if board[player.position].owner == "Bank":#if the bank owns the property
