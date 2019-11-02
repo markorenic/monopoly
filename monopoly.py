@@ -17,10 +17,10 @@ def bubble_sort(list): #function to sort objects by number of times stopped on
         numstops = num.stops  #numstops is number of stops of the current index
         try: #try to index the next value in list, skip if no more index
             if list[i+1].stops < numstops: #compare num value to each value of i until it is smaller
-                list[i] = list[i+1]  #if it is swap the twp
+                list[i] = list[i+1]  #if it is swap the tmp
                 list[i+1] = num 
                 bubble_sort(list) #call recursively for next index
-        except IndexError: #if no more index, exit, change to if len = 1
+        except IndexError: #if no more index, exit
             pass
     return list #return sorted list
 
@@ -47,11 +47,11 @@ def sortedresults(list):
 def plotgraph():
     properties = []
     stops = []
-    i = 0
-    while i < len(board):
-        properties.append(board[i].name)
-        stops.append(board[i].stops)
-        i = i + 1
+    counter = 0
+    while counter < len(board):
+        properties.append(board[counter].name)
+        stops.append(board[counter].stops)
+        counter = counter + 1
 
     y_pos = np.arange(len(properties))
     plt.bar(y_pos, stops, align='center', alpha=0.5)
@@ -73,13 +73,14 @@ class Property:
         self.owner = "Bank"
 
 class Player:
-    def __init__(self,name, preforder, minbalance):
+    def __init__(self,name, minbalance):
         self.name = name
         self.balance = 1500
         self.position = 0
         self.jail_pass = 0
-        self.preforder = preforder
+        self.jailed = False
         self.minbalance = minbalance
+        self.wins = 0
 
 #dice roll
 def diceroll(position,doubles):
@@ -172,16 +173,15 @@ def createboard(csv_file):
 
 def resetdeck(deck):
     if deck == "community":
-        starting_community = [0,"Go to Go and Collect 200","Pay 50","Collect 50","Get Out of Jail Free",10,"Collect 50","Collect 100","Collect 20","Collect 100","Pay 50","Pay 50","Collect 25","Pay $40 per property","Collect 10","Collect 100"] #sorted community deck
+        starting_community = {0,"Go to Go and Collect 200","Pay 50","Collect 50","Get Out of Jail Free",10,"Collect 50","Collect 100","Collect 20","Collect 100","Pay 50","Pay 50","Collect 25","Pay $40 per property","Collect 10","Collect 100"} #sorted community deck
         community = [i for i in starting_community] #copy sorted community into starting community that will be shuffled
         community = shuffledeck(community)
         return community
     elif deck == "chance":
-        starting_chance = [0,24,11,'Utility','Railroad',"Collect 50","Get out of Jail Free",'Back',10,"Pay 25 per property","Pay 15",5,39,"Pay 50","Collect 50","Collect 100"]#sorted chance deck
+        starting_chance = {0,24,11,'Utility','Railroad',"Collect 50","Get out of Jail Free",'Back',10,"Pay 25 per property","Pay 15",5,39,"Pay 50","Collect 50","Collect 100"}#sorted chance deck
         chance = [i for i in starting_chance] #copy sorted chance into starting community that will be shuffled
         chance = shuffledeck(chance)
         return chance
-
 
 
 
@@ -219,12 +219,15 @@ def monopolyrun():#version of the game where one player continuesly travels arou
                     
                 if isinstance(card,int):#if the card is integer, move to the position shown by the card
                     position = card
-                elif card == "Utility": #if card is utility
-                    while board[position].type != "utility":#move to next closesed utility
-                        position = (position+1)%40
+                
                 elif card == "Railroad":
                     while board[position].type != "railroad":#move to next closesed railroad
                         position = (position+1)%40
+
+                elif card == "Utility": #if card is utility
+                    while board[position].type != "utility":#move to next closesed utility
+                        position = (position+1)%40
+                
                 elif card == "Back":#if card is back, move three positions backwards
                     position = position - 3
                 else:
@@ -321,9 +324,13 @@ def getposition(chance, community, player):
     
     if board[position].name == "Go to Jail":#if card is go to jail, move to position 10 (Jail)
         position = 10
+        player.jailed = True
+        if player.jail_pass > 0:#use het out of jail card
+            player.jailed = False
+            player.jail_pass = player.jail_pass - 1
     
     board[position].stops += 1 #add one stop to position where the player ends his turn
-    if position >=40:
+    if position >=40:#get 200 after passing go
         player.balance = player.balance + 200
     
     return(position%40) #print position at which the player ended that turn)
@@ -372,9 +379,7 @@ def strategymonopoly():
             if players_with_minbalance < 0:
                 print("Input must be a positive integer, try again.\n")
                 players_with_minbalance = "error"
-            if (players_with_minbalance + players_with_logic) > n_players:
-                print("Number or players exceeds the total number of players, Players available = ", (n_players - players_with_logic))
-                players_with_minbalance = "error"
+            
             players_with_minbalance = int(players_with_minbalance)
             validation = True
             print("Number of players with minimal balance ", players_with_minbalance)
@@ -391,13 +396,13 @@ def strategymonopoly():
 
     i = 0
     while i < players_with_minbalance:
-        player = Player(playercounter+1,False,random.randint(0,100))
+        player = Player(playercounter+1,(random.randint(0,15)*100))
         players.append(player)
         i = i + 1
         playercounter = playercounter + 1
 
     while playercounter < n_players:
-        player = Player(playercounter+1,False,random.randint(0,1500))
+        player = Player(playercounter+1,0)
         players.append(player)
         playercounter = playercounter + 1
     
@@ -407,7 +412,6 @@ def strategymonopoly():
     for i in range (0,len(players)):
         print("_________________________________________________________")
         print("Player name: Player", players[i].name)
-        print("Player has prefered properties: ", players[i].preforder)
         print("Player minbalance = ", players[i].minbalance)
 
         i = i + 1
@@ -428,102 +432,98 @@ def strategymonopoly():
 
     while gamesplayed < n_games :
         #start new game
+        #reset players game values, 
+        #keeping their strategy and wins
+        k = 0 #counters
+        player = players[k]
+        while k < len(players):
+            player = players[k]
+            player.balance = 1500
+            player.position = 0
+            player.jail_pass = 0
+            player.jailed = False
+            k = k + 1
+
+
         community = resetdeck("community")
         chance = resetdeck("chance")
-        doubles = 0
+        k = 0 #counter
+        i = 0 #counter
+        j = 0 #counter
         gos = 0
         position = 0
         turn = 0
-        i = 0
-        j = 0
+        
 
         #while there are more then 1 player left (when there is one, that one is the winner)
         while len(players)>1:
             #assign the correct class of player to player for this turn
             player = players[i]
             #get position of player
-            player.position = getposition(chance,community,player)
-            
-
-            print(players[i].name, " is on position ", players[i].position)#print
-
-            if len(chance) == 0:    #if the deck is empty, reshuffle from starting community
-                chance = resetdeck("chance")
-            if len(community) == 0:    #if the deck is empty, reshuffle from starting community
-                community = resetdeck("community")
-            
-            #if the board type is not a base item (meaning it can be bought)
-            if board[player.position].type != "base":
+            if player.jailed == False:#if the player is not in jail, if he is, skip turn
                 
-                if(board[player.position].owner != "Bank"): #if the bank is not the owner, a player is
-                    j = 0
-                    player.balance = player.balance - int(board[player.position].rent)  #player pays rent
-                    while players[j].name != board[player.position].owner:  #find the player who's property this is
-                        j = (j + 1)%n_players
-                    players[j].balance = players[j].balance + int(board[player.position].rent)#pay that player the rent
-                    print(player.name, " payed ", int(board[player.position].rent), "to ", players[j].name)
-                    j = 0#reset j
+                player.position = getposition(chance,community,player)
+                
+                print("Player_",players[i].name, " is on position ", board[players[i].position].name)#print
 
-                if board[player.position].owner == "Bank":#if the bank owns the property
+                if len(chance) == 0:    #if the deck is empty, reshuffle from starting community
+                    chance = resetdeck("chance")
+                if len(community) == 0:    #if the deck is empty, reshuffle from starting community
+                    community = resetdeck("community")
+                
+                #if the board type is not a base item, it can be bought)
+                if board[player.position].type != "base":
                     
-                    able2buy = ["utility","railroad","street"]#type of properties that can be bought
-                    if board[player.position].type in able2buy:
+                    if(board[player.position].owner != "Bank"): #if the bank is not the owner, a player is
+                        player.balance = player.balance - int(board[player.position].rent)  #player pays rent
+                        j = 0
+                        while players[j].name != board[player.position].owner:  #find the player who's property this is
+                            j = (j + 1)%len(players)
+                        players[j].balance = players[j].balance + int(board[player.position].rent)#pay that player the rent
+                        print("Player_", player.name, " payed ", int(board[player.position].rent), "$ to ", "Player_",players[j].name)
+                        j = 0#reset j
+
+                    if board[player.position].owner == "Bank":#if the bank owns the property
                         #player buys property
                         if player.balance > int(board[player.position].cost):#if player has enough money
                             if (player.balance - int(board[player.position].cost)) > player.minbalance:#if the players minimum balance atribute is lower then the money he will have after buying the property
                                 board[player.position].owner = player.name#trasnfer ownership to player
                                 player.balance = player.balance - int(board[player.position].cost)#player pays the cost of property
-                                print("Player ", player.name," bought ", board[player.position].name)#output the purchase in terminal
-                    
-                    else:
-                        player.balance = player.balance - int(board[player.position].rent)#if the property cannot be bought, player pays the fee of it (in case of Go fee is -200 which ads 200 to the players budget)
-           
-            elif board[player.position].type == "base":#if the property cannot be bought
-                        player.balance = player.balance - int(board[player.position].rent)#if the property cannot be bought, player pays the fee of it (in case of Go fee is -200 which ads 200 to the players budget)
+                                print("Player_", player.name," bought ", board[player.position].name)#output the purchase in terminal
+                            else:
+                                pass#player does not have enough money to buy the property
             
-            print("_________________________________________________________This was turn number ",gos, "In game ",gamesplayed + 1 )   
+                elif board[player.position].type == "base":#if the property cannot be bought
+                    #if the property cannot be bought, player pays the fee of it (in case of Go fee is -200 which ads 200 to the players budget)
+                            player.balance = player.balance - int(board[player.position].rent)
+                print("_________________________________________________________This was turn number ",gos, "In game ",gamesplayed + 1 )   
 
-            if player.balance < 0:
-                player_deleted = False
-                j = 0
-                while j < 40:
-                    if board[j].owner == player.name:
-                        board[j].owner = board[player.position].owner
-                    j = (j + 1)
+                if player.balance < 0:#if the player is bankrupt
+                    j = 0
+                    while j < 40:#transfer ownership of bakrupt player to the player he ows rent
+                        if board[j].owner == player.name:
+                            board[j].owner = board[player.position].owner
+                        j = (j + 1)
+                    print("Player_",player.name," could not pay Player", board[player.position].owner , " and has lost.")
+                    players.pop(i)#remove player from game
+                    i = (i)%len(players)#mod used to circle back to 
+                                        #first player if the player was last in array
+                else:
+                    i = (i + 1)%len(players)
 
-                players.pop(i)
-                i = (i)%len(players)
-            
-            else:
-                i = (i + 1)%len(players)
-            
+            else:#remove player from jail after skipped turn
+                player.jailed = False
             gos = gos + 1
             
         print("Winner = ", players[0].name)
+        players[0].wins = players[0].wins + 1
         gamesplayed = gamesplayed + 1
+    
+
     sortedresults(board)
     plotgraph()
+    plt.close()
 
-
-
-#add change atributes for each player
-#make function to call with (player,variable to change, change to value)
-
-
-
-
-
-
-
-
-
-
-
-
+#verify the csv file, and initialise board
 verify("properties.csv")
 strategymonopoly()
-#verify the csv file, and initialise board
-
-#monopolyrun()
-plotgraph()
-##############
