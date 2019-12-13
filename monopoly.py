@@ -186,80 +186,80 @@ def resetdeck(deck):
 
 
 
-def monopolyrun():#version of the game where one player continuesly travels around the board
-    #####################################################################
-    # Start menu, input rules and stuff
-    finished = int(input("How many games do you want to simulate?"))
-    turns = int(input("How many turns per game?"))
-    results_sort = 0
-    while not (results_sort == 'y' or results_sort == 'n'):
-        results_sort = input("Sort the array by stops? \n (y/n)>>  ")
-    #####################################################################
+# def monopolyrun():#version of the game where one player continuesly travels around the board
+#     #####################################################################
+#     # Start menu, input rules and stuff
+#     finished = int(input("How many games do you want to simulate?"))
+#     turns = int(input("How many turns per game?"))
+#     results_sort = 0
+#     while not (results_sort == 'y' or results_sort == 'n'):
+#         results_sort = input("Sort the array by stops? \n (y/n)>>  ")
+#     #####################################################################
 
-    games_played = 0 #reset how many games have been played
-    while games_played < finished: #while games played is less then set number of games, play another one
+#     games_played = 0 #reset how many games have been played
+#     while games_played < finished: #while games played is less then set number of games, play another one
         
-        community = resetdeck("community")
-        chance = resetdeck("chance")
+#         community = resetdeck("community")
+#         chance = resetdeck("chance")
 
-        #starting game declare variables
-        doubles = 0
-        position = 0
-        gos = 0
+#         #starting game declare variables
+#         doubles = 0
+#         position = 0
+#         gos = 0
 
-        while gos < turns: #while number of gos is less then set, play more turns
+#         while gos < turns: #while number of gos is less then set, play more turns
 
-            position = diceroll(position,0) #call diceroll passing the current position
+#             position = diceroll(position,0) #call diceroll passing the current position
 
-            if board[position].name == "Chance": #if board position is a chance
+#             if board[position].name == "Chance": #if board position is a chance
 
-                card = chance.pop(0)    #take a card from the end of the deck
-                if len(chance) == 0:    #if the deck is empty, reshuffle from starting community
-                    chance = resetdeck("chance")
+#                 card = chance.pop(0)    #take a card from the end of the deck
+#                 if len(chance) == 0:    #if the deck is empty, reshuffle from starting community
+#                     chance = resetdeck("chance")
                     
-                if isinstance(card,int):#if the card is integer, move to the position shown by the card
-                    position = card
+#                 if isinstance(card,int):#if the card is integer, move to the position shown by the card
+#                     position = card
                 
-                elif card == "Railroad":
-                    while board[position].type != "railroad":#move to next closesed railroad
-                        position = (position+1)%40
+#                 elif card == "Railroad":
+#                     while board[position].type != "railroad":#move to next closesed railroad
+#                         position = (position+1)%40
 
-                elif card == "Utility": #if card is utility
-                    while board[position].type != "utility":#move to next closesed utility
-                        position = (position+1)%40
+#                 elif card == "Utility": #if card is utility
+#                     while board[position].type != "utility":#move to next closesed utility
+#                         position = (position+1)%40
                 
-                elif card == "Back":#if card is back, move three positions backwards
-                    position = position - 3
-                else:
-                    position = position
+#                 elif card == "Back":#if card is back, move three positions backwards
+#                     position = position - 3
+#                 else:
+#                     position = position
                         
             
-            elif board[position].name == "Community chest": #if stepped on Community community
-                card = community.pop(0)#pull community card from top of deck
-                if len(community) == 0:#if deck is empty, reshuffle
-                    community = resetdeck("community")
-                if isinstance(card,int):
-                    position = card
-                else:
-                    position = position
+#             elif board[position].name == "Community chest": #if stepped on Community community
+#                 card = community.pop(0)#pull community card from top of deck
+#                 if len(community) == 0:#if deck is empty, reshuffle
+#                     community = resetdeck("community")
+#                 if isinstance(card,int):
+#                     position = card
+#                 else:
+#                     position = position
             
-            if board[position].name == "Go to Jail":#if card is go to jail, move to position 10 (Jail)
-                position = 10
+#             if board[position].name == "Go to Jail":#if card is go to jail, move to position 10 (Jail)
+#                 position = 10
             
-            board[position].stops += 1 #add one stop to position where the player ends his turn
-            print(board[position].name) #print position at which the player ended that turn)
-            gos += 1 #increment gos
-        games_played +=1 #after a game is ended, incremenet number of games played
+#             board[position].stops += 1 #add one stop to position where the player ends his turn
+#             print(board[position].name) #print position at which the player ended that turn)
+#             gos += 1 #increment gos
+#         games_played +=1 #after a game is ended, incremenet number of games played
 
-    if results_sort == 'y':
-        sortedresults(board)
-    elif results_sort == 'n':
-        showresults(board)
-    else:
-        print('Error')
+#     if results_sort == 'y':
+#         sortedresults(board)
+#     elif results_sort == 'n':
+#         showresults(board)
+#     else:
+#         print('Error')
     
 
-def getposition(chance, community, player):
+def getposition(board,chance, community, player):
 
     position = player.position
     position = diceroll(position,0) #call diceroll passing the current position
@@ -325,7 +325,7 @@ def getposition(chance, community, player):
     if board[position].name == "Go to Jail":#if card is go to jail, move to position 10 (Jail)
         position = 10
         player.jailed = True
-        if player.jail_pass > 0:#use het out of jail card
+        if player.jail_pass > 0:#use get out of jail card
             player.jailed = False
             player.jail_pass = player.jail_pass - 1
     
@@ -340,6 +340,7 @@ def getposition(chance, community, player):
 
 def strategymonopoly():
 
+############################################################OPTIONS##############################################################################
     #initiate number of players
     validation = False
     while validation == False:
@@ -379,22 +380,21 @@ def strategymonopoly():
             if players_with_minbalance < 0:
                 print("Input must be a positive integer, try again.\n")
                 players_with_minbalance = "error"
+            if players_with_minbalance > n_players:
+                print("Input cannot be more then the number of players")
+                players_with_minbalance = "error"
             
             players_with_minbalance = int(players_with_minbalance)
             validation = True
             print("Number of players with minimal balance ", players_with_minbalance)
         except:
             validation = False
-
    
-    
     players = []
     playercounter = 0
     i = 0
 
     #create players
-
-    i = 0
     while i < players_with_minbalance:
         player = Player(playercounter+1,(random.randint(0,15)*100))
         players.append(player)
@@ -427,9 +427,10 @@ def strategymonopoly():
             n_games = int(n_games)
         except:
             n_games = int(input("How many games do you wish to simulate? (Must be a positive integer)"))
-    
-    gamesplayed = 0
+################################################################################################################################################
 
+    gamesplayed = 0
+    text_file = open("Output.txt", "w")
     while gamesplayed < n_games :
         #start new game
         #reset players game values, 
@@ -447,8 +448,9 @@ def strategymonopoly():
 
         community = resetdeck("community")
         chance = resetdeck("chance")
+        playersout = []
         k = 0 #counter
-        i = 0 #counter
+        i = 0 #counter of player
         j = 0 #counter
         gos = 0
         position = 0
@@ -457,14 +459,16 @@ def strategymonopoly():
 
         #while there are more then 1 player left (when there is one, that one is the winner)
         while len(players)>1:
-            #assign the correct class of player to player for this turn
+            #assign the correct class of player[i] to player for this turn
             player = players[i]
             #get position of player
             if player.jailed == False:#if the player is not in jail, if he is, skip turn
                 
-                player.position = getposition(chance,community,player)
+                player.position = getposition(board,chance,community,player)
                 
-                print("Player_",players[i].name, " is on position ", board[players[i].position].name)#print
+                print("Player_",player.name, " is on position ", board[player.position].name)#print
+                message = str("\nPlayer_" + str(player.name) + " is on position " + str(board[player.position].name))
+                text_file.write(message)
 
                 if len(chance) == 0:    #if the deck is empty, reshuffle from starting community
                     chance = resetdeck("chance")
@@ -481,22 +485,29 @@ def strategymonopoly():
                             j = (j + 1)%len(players)
                         players[j].balance = players[j].balance + int(board[player.position].rent)#pay that player the rent
                         print("Player_", player.name, " payed ", int(board[player.position].rent), "$ to ", "Player_",players[j].name)
+                        message = "\nPlayer_"+ str(player.name)+ " payed "+ str(board[player.position].rent)+ "$ to Player_" + str(players[j].name)
+                        text_file.write(message)
+                        
                         j = 0#reset j
 
                     if board[player.position].owner == "Bank":#if the bank owns the property
                         #player buys property
                         if player.balance > int(board[player.position].cost):#if player has enough money
-                            if (player.balance - int(board[player.position].cost)) > player.minbalance:#if the players minimum balance atribute is lower then the money he will have after buying the property
+                            if (int(player.balance) - int(board[player.position].cost)) > player.minbalance:#if the players minimum balance atribute is lower then the money he will have after buying the property
                                 board[player.position].owner = player.name#trasnfer ownership to player
                                 player.balance = player.balance - int(board[player.position].cost)#player pays the cost of property
                                 print("Player_", player.name," bought ", board[player.position].name)#output the purchase in terminal
+                                message = str("\nPlayer_"+ str(player.name)+" bought "+ str(board[player.position].name))
+                                text_file.write(message)
                             else:
                                 pass#player does not have enough money to buy the property
             
                 elif board[player.position].type == "base":#if the property cannot be bought
                     #if the property cannot be bought, player pays the fee of it (in case of Go fee is -200 which ads 200 to the players budget)
                             player.balance = player.balance - int(board[player.position].rent)
-                print("_________________________________________________________This was turn number ",gos, "In game ",gamesplayed + 1 )   
+                print("_________________________________________________________This was turn number ",gos, "In game ",gamesplayed + 1 )  
+                message = str("\n_________________________________________________________This was turn number "+ str(gos) + "In game "+ str(gamesplayed + 1))
+                text_file.write(message)   
 
                 if player.balance < 0:#if the player is bankrupt
                     j = 0
@@ -505,8 +516,11 @@ def strategymonopoly():
                             board[j].owner = board[player.position].owner
                         j = (j + 1)
                     print("Player_",player.name," could not pay Player", board[player.position].owner , " and has lost.")
+                    message = str("\nPlayer_" + str(player.name) +" could not pay Player"+ str(board[player.position].owner) + " and has lost.")
+                    text_file.write(message)
+                    playersout.append(player)
                     players.pop(i)#remove player from game
-                    i = (i)%len(players)#mod used to circle back to 
+                    i = (i-1)%len(players)#mod used to circle back to 
                                         #first player if the player was last in array
                 else:
                     i = (i + 1)%len(players)
@@ -514,10 +528,15 @@ def strategymonopoly():
             else:#remove player from jail after skipped turn
                 player.jailed = False
             gos = gos + 1
-            
-        print("Winner = ", players[0].name)
-        players[0].wins = players[0].wins + 1
+        for i in range (0,len(players)):
+            print("Winner = ", players[0].name)
+            text_file.write("\nWinner = " + str(players[0].name))
+            players[0].wins = players[0].wins + 1
         gamesplayed = gamesplayed + 1
+        players = players + playersout
+        playersout.clear
+    
+
     
 
     sortedresults(board)
