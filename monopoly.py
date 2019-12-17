@@ -9,9 +9,6 @@ import matplotlib.animation as animation
 from matplotlib import style
 
 
-#board is empty until the .csv is imported
-board = []
-
 def bubble_sort(list): #function to sort objects by number of times stopped on
     for i, num in enumerate(list): #itterate through indexes of the list
         numstops = num.stops  #numstops is number of stops of the current index
@@ -44,7 +41,7 @@ def sortedresults(list):
         i += 1
     print(results)
 
-def plotgraph():
+def plotgraph(board):
     properties = []
     stops = []
     counter = 0
@@ -84,7 +81,6 @@ class Player:
 
 #dice roll
 def diceroll(position,doubles):
-    
 
     dice1 = random.randint(1,6) 
     dice2 = random.randint(1,6)
@@ -151,13 +147,15 @@ def verify(csv_file): #verifies all the data is correct data type
 
     if len(error) < 1: #if there is no error close the file and createboard
         file.close()
-        createboard(filename)
     else:
         error = "Errors found are: " + str(error) #still need to clean up the error array
         ctypes.windll.user32.MessageBoxW(0, error, "Warning", 1) #make alert box displaying error messages
         
 
 def createboard(csv_file):
+    board = []
+    board.clear
+
     file = open(csv_file) #open file
     csv_file = csv.reader(file) #open file in reader
     next(csv_file) #skips header row
@@ -168,6 +166,7 @@ def createboard(csv_file):
             base = Property(p[0],p[1],p[2],p[3],p[4]) # create starting property with its properties from csv on the board, in order
             board.append(base)
         print("Board succesfully initialised") #output succesful board initialisation
+        return board
     except:
         print("Unkown error, unable to initialise board") #if error found, error passed validation therefore its unkown.
 
@@ -413,7 +412,6 @@ def strategymonopoly():
         print("_________________________________________________________")
         print("Player name: Player", players[i].name)
         print("Player minbalance = ", players[i].minbalance)
-
         i = i + 1
     
     n_games = input("How many games do you wish to simulate?")
@@ -436,6 +434,7 @@ def strategymonopoly():
         #reset players game values, 
         #keeping their strategy and wins
         k = 0 #counters
+        board = createboard("properties.csv")
         player = players[k]
         while k < len(players):
             player = players[k]
@@ -528,21 +527,34 @@ def strategymonopoly():
             else:#remove player from jail after skipped turn
                 player.jailed = False
             gos = gos + 1
-        for i in range (0,len(players)):
-            print("Winner = ", players[0].name)
-            text_file.write("\nWinner = " + str(players[0].name))
-            players[0].wins = players[0].wins + 1
+
+        print("Winner = ", players[0].name)
+        text_file.write("\nWinner = " + str(players[0].name))
+        players[0].wins = players[0].wins + 1
         gamesplayed = gamesplayed + 1
         players = players + playersout
         playersout.clear
+        sortedresults(board)
+        plotgraph(board)
+        plt.close()
     
+    #sort players by number of wins
+    counter = len(players)
+    # Traverse through all array elements
+    for i in range(counter):
+        # Last i elements are already in place
+        for j in range (0,counter - i - 1):
+            # traverse the array from 0 to n-i-1
+            # Swap if the element found is greater
+            # than the next element
+            if players[j].wins > players[j+1].wins:
+                players[j], players[j+1] = players[j+1], players[j]
 
-    
+    for i in range(0,counter):
+        print("Wins of player ", players[i+1].name, ": ", players[i].wins)    
 
-    sortedresults(board)
-    plotgraph()
-    plt.close()
 
 #verify the csv file, and initialise board
 verify("properties.csv")
 strategymonopoly()
+
