@@ -6,7 +6,9 @@ import ctypes
 import matplotlib.pyplot as plt; plt.rcdefaults()
 import numpy as np
 import matplotlib.animation as animation
-from matplotlib import style
+try: from matplotlib import style
+except:
+    pass
 
 
 def bubble_sort(list): #function to sort objects by number of times stopped on
@@ -36,10 +38,10 @@ def sortedresults(list):
     i = 0
     bubble_sort(list)
     while i < len(list):
-        print(list[i].name, "was stepped on ", list[i].stops," times.")
+        #print(list[i].name, "was stepped on ", list[i].stops," times.")
         results.append(list[i].stops)
         i += 1
-    print(results)
+    #print(results)
 
 def plotgraph(board):
     properties = []
@@ -534,9 +536,9 @@ def strategymonopoly():
         gamesplayed = gamesplayed + 1
         players = players + playersout
         playersout.clear
-        sortedresults(board)
-        plotgraph(board)
-        plt.close()
+        #sortedresults(board)
+        #plotgraph(board)
+        #plt.close()
     
     #sort players by number of wins
     counter = len(players)
@@ -547,14 +549,21 @@ def strategymonopoly():
             # traverse the array from 0 to n-i-1
             # Swap if the element found is greater
             # than the next element
-            if players[j].wins > players[j+1].wins:
+            if players[j].wins < players[j+1].wins:
                 players[j], players[j+1] = players[j+1], players[j]
 
     for i in range(0,counter):
-        print("Wins of player ", players[i+1].name, ": ", players[i].wins)    
+        print("Wins of player ", players[i].name, ": ", players[i].wins)    
+        #add sum of each visitt of property after all games
 
 
 #verify the csv file, and initialise board
 verify("properties.csv")
 strategymonopoly()
 
+# __todo_________________________________-
+# add sum of each visit of property at end of game
+# add game finishes after 65 turns and with most total value wins.
+# push to git
+# show atributed of each player according to questions at the end and export data to file if wanted.
+#________________________________________-
