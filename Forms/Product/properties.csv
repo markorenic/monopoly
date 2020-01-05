@@ -1,0 +1,41 @@
+name,cost,type,rent,color
+Go,0,base,-200,None
+Mediterranean Avenue,60,street,2,Brown
+Community chest,0,base,0,None
+Baltic Avenue,60,street,4,Brown
+Income Tax,0,base,200,None
+Reading Railroad,200,railroad,25,Railroad
+Oriental Avenue,100,street,6,Light Blue
+Chance,0,base,0,None
+Vermont Avenue,100,street,6,Light Blue
+Connecticut Avenue,120,street,8,Light Blue
+Jail (visit),0,base,0,None
+St. Charles Place,140,street,10,Pink
+Electric Company,150,utility,0,Utility
+States Avenue,140,street,10,Pink
+Virginia Avenue,160,street,12,Pink
+Pennsylvania Railroad,200,railroad,25,Railroad
+St. James Place,180,street,14,Orange
+Community chest,0,base,0,None
+Tennessee Avenue,180,street,14,Orange
+New York Avenue,200,street,16,Orange
+Free Parking,0,base,0,None
+Kentucky Avenue,220,street,18,Red
+Chance,0,base,0,None
+Indiana Avenue,220,street,18,Red
+Illinois Avenue,240,street,20,Red
+B+O Railroad,200,railroad,25,Railroad
+Atlantic Avenue,260,street,22,Yellow
+Ventnor Avenue,260,street,22,Yellow
+Water Works,150,utility,0,Utility
+Marvin Gardens,280,street,24,Yellow
+Go to Jail,0,base,0,None
+Pacific Avenue,300,street,26,Green
+North Carolina Avenue,300,street,26,Green
+Community chest,0,base,0,None
+Pennsylvania Avenue,320,street,28,Green
+Short Line,200,railroad,25,Railroad
+Chance,0,base,0,None
+Park Place,350,street,35,Dark Blue
+Luxury Tax,100,base,200,None
+Boardwalk,400,street,50,Dark Blue

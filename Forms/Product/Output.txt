@@ -1,0 +1,1178 @@
+
+Player_1 is on position Chance
+_________________________________________________________This was turn number 0In game 1
+Player_2 is on position Oriental Avenue
+Player_2 bought Oriental Avenue
+_________________________________________________________This was turn number 1In game 1
+Player_3 is on position Jail (visit)
+_________________________________________________________This was turn number 2In game 1
+Player_1 is on position Pennsylvania Railroad
+Player_1 bought Pennsylvania Railroad
+_________________________________________________________This was turn number 3In game 1
+Player_2 is on position St. James Place
+Player_2 bought St. James Place
+_________________________________________________________This was turn number 4In game 1
+Player_3 is on position Electric Company
+Player_3 bought Electric Company
+_________________________________________________________This was turn number 5In game 1
+Player_1 is on position Tennessee Avenue
+Player_1 bought Tennessee Avenue
+_________________________________________________________This was turn number 6In game 1
+Player_2 is on position Indiana Avenue
+Player_2 bought Indiana Avenue
+_________________________________________________________This was turn number 7In game 1
+Player_3 is on position Community chest
+_________________________________________________________This was turn number 8In game 1
+Player_1 is on position Indiana Avenue
+Player_1 payed 18$ to Player_2
+_________________________________________________________This was turn number 9In game 1
+Player_2 is on position Atlantic Avenue
+Player_2 bought Atlantic Avenue
+_________________________________________________________This was turn number 10In game 1
+Player_3 is on position Illinois Avenue
+Player_3 bought Illinois Avenue
+_________________________________________________________This was turn number 11In game 1
+Player_1 is on position Community chest
+_________________________________________________________This was turn number 12In game 1
+Player_2 is on position Go
+_________________________________________________________This was turn number 13In game 1
+Player_3 is on position Pacific Avenue
+Player_3 bought Pacific Avenue
+_________________________________________________________This was turn number 14In game 1
+Player_1 is on position Community chest
+_________________________________________________________This was turn number 15In game 1
+Player_2 is on position Pennsylvania Railroad
+Player_2 payed 25$ to Player_1
+_________________________________________________________This was turn number 16In game 1
+Player_3 is on position Luxury Tax
+_________________________________________________________This was turn number 17In game 1
+Player_1 is on position Jail (visit)
+_________________________________________________________This was turn number 18In game 1
+Player_2 is on position Chance
+_________________________________________________________This was turn number 19In game 1
+Player_3 is on position Oriental Avenue
+Player_3 payed 6$ to Player_2
+_________________________________________________________This was turn number 20In game 1
+Player_1 is on position Pennsylvania Railroad
+Player_1 payed 25$ to Player_1
+_________________________________________________________This was turn number 21In game 1
+Player_2 is on position Pacific Avenue
+Player_2 payed 26$ to Player_3
+_________________________________________________________This was turn number 22In game 1
+Player_3 is on position St. Charles Place
+Player_3 bought St. Charles Place
+_________________________________________________________This was turn number 23In game 1
+Player_1 is on position Kentucky Avenue
+Player_1 bought Kentucky Avenue
+_________________________________________________________This was turn number 24In game 1
+Player_2 is on position Go
+_________________________________________________________This was turn number 25In game 1
+Player_3 is on position Boardwalk
+Player_3 bought Boardwalk
+_________________________________________________________This was turn number 26In game 1
+Player_1 is on position Atlantic Avenue
+Player_1 payed 22$ to Player_2
+_________________________________________________________This was turn number 27In game 1
+Player_2 is on position Jail (visit)
+_________________________________________________________This was turn number 28In game 1
+Player_3 is on position Oriental Avenue
+Player_3 payed 6$ to Player_2
+_________________________________________________________This was turn number 29In game 1
+Player_1 is on position Jail (visit)
+_________________________________________________________This was turn number 30In game 1
+Player_2 is on position Virginia Avenue
+Player_2 bought Virginia Avenue
+_________________________________________________________This was turn number 31In game 1
+Player_3 is on position Electric Company
+Player_3 payed 0$ to Player_3
+_________________________________________________________This was turn number 32In game 1
+Player_1 is on position Virginia Avenue
+Player_1 payed 12$ to Player_2
+_________________________________________________________This was turn number 34In game 1
+Player_2 is on position Free Parking
+_________________________________________________________This was turn number 35In game 1
+Player_3 is on position Tennessee Avenue
+Player_3 payed 14$ to Player_1
+_________________________________________________________This was turn number 36In game 1
+Player_1 is on position Atlantic Avenue
+Player_1 payed 22$ to Player_2
+_________________________________________________________This was turn number 37In game 1
+Player_2 is on position Water Works
+Player_2 bought Water Works
+_________________________________________________________This was turn number 38In game 1
+Player_3 is on position Indiana Avenue
+Player_3 payed 18$ to Player_2
+_________________________________________________________This was turn number 39In game 1
+Player_1 is on position Pacific Avenue
+Player_1 payed 26$ to Player_3
+_________________________________________________________This was turn number 40In game 1
+Player_2 is on position Pennsylvania Avenue
+Player_2 bought Pennsylvania Avenue
+_________________________________________________________This was turn number 41In game 1
+Player_3 is on position Community chest
+_________________________________________________________This was turn number 42In game 1
+Player_1 is on position Baltic Avenue
+Player_1 bought Baltic Avenue
+_________________________________________________________This was turn number 43In game 1
+Player_2 is on position Reading Railroad
+Player_2 bought Reading Railroad
+_________________________________________________________This was turn number 44In game 1
+Player_3 is on position Community chest
+_________________________________________________________This was turn number 45In game 1
+Player_1 is on position States Avenue
+Player_1 bought States Avenue
+_________________________________________________________This was turn number 46In game 1
+Player_2 is on position Connecticut Avenue
+Player_2 bought Connecticut Avenue
+_________________________________________________________This was turn number 47In game 1
+Player_3 is on position Electric Company
+Player_3 payed 0$ to Player_3
+_________________________________________________________This was turn number 48In game 1
+Player_1 is on position Free Parking
+_________________________________________________________This was turn number 49In game 1
+Player_2 is on position States Avenue
+Player_2 payed 10$ to Player_1
+_________________________________________________________This was turn number 50In game 1
+Player_3 is on position New York Avenue
+_________________________________________________________This was turn number 51In game 1
+Player_1 is on position Ventnor Avenue
+Player_1 bought Ventnor Avenue
+_________________________________________________________This was turn number 52In game 1
+Player_2 is on position Free Parking
+_________________________________________________________This was turn number 53In game 1
+Player_3 is on position Chance
+_________________________________________________________This was turn number 54In game 1
+Player_1 is on position Pennsylvania Avenue
+Player_1 payed 28$ to Player_2
+_________________________________________________________This was turn number 55In game 1
+Player_2 is on position Atlantic Avenue
+Player_2 payed 22$ to Player_2
+_________________________________________________________This was turn number 56In game 1
+Player_3 is on position Ventnor Avenue
+Player_3 payed 22$ to Player_1
+_________________________________________________________This was turn number 57In game 1
+Player_1 is on position Income Tax
+_________________________________________________________This was turn number 58In game 1
+Player_2 is on position North Carolina Avenue
+_________________________________________________________This was turn number 59In game 1
+Player_3 is on position Marvin Gardens
+_________________________________________________________This was turn number 60In game 1
+Player_1 is on position Virginia Avenue
+Player_1 payed 12$ to Player_2
+_________________________________________________________This was turn number 61In game 1
+Player_2 is on position Luxury Tax
+_________________________________________________________This was turn number 62In game 1
+Player_3 is on position Jail (visit)
+_________________________________________________________This was turn number 63In game 1
+Player_1 is on position St. James Place
+Player_1 payed 14$ to Player_2
+_________________________________________________________This was turn number 64In game 1
+Player_2 is on position Reading Railroad
+Player_2 payed 25$ to Player_2
+_________________________________________________________This was turn number 65In game 1
+Player_3 is on position New York Avenue
+_________________________________________________________This was turn number 66In game 1
+Player_1 is on position B+O Railroad
+_________________________________________________________This was turn number 67In game 1
+Player_2 is on position Virginia Avenue
+Player_2 payed 12$ to Player_2
+_________________________________________________________This was turn number 68In game 1
+Player_3 is on position Atlantic Avenue
+Player_3 payed 22$ to Player_2
+_________________________________________________________This was turn number 69In game 1
+Player_1 is on position Water Works
+Player_1 payed 0$ to Player_2
+_________________________________________________________This was turn number 70In game 1
+Player_2 is on position Kentucky Avenue
+Player_2 payed 18$ to Player_1
+_________________________________________________________This was turn number 71In game 1
+Player_3 is on position Community chest
+_________________________________________________________This was turn number 72In game 1
+Player_1 is on position Park Place
+_________________________________________________________This was turn number 73In game 1
+Player_2 is on position Jail (visit)
+_________________________________________________________This was turn number 74In game 1
+Player_3 is on position Go
+_________________________________________________________This was turn number 75In game 1
+Player_1 is on position Baltic Avenue
+Player_1 payed 4$ to Player_1
+_________________________________________________________This was turn number 76In game 1
+Player_2 is on position New York Avenue
+_________________________________________________________This was turn number 78In game 1
+Player_3 is on position Oriental Avenue
+Player_3 payed 6$ to Player_2
+_________________________________________________________This was turn number 79In game 1
+Player_1 is on position Jail (visit)
+_________________________________________________________This was turn number 80In game 1
+Player_2 is on position Water Works
+Player_2 payed 0$ to Player_2
+_________________________________________________________This was turn number 81In game 1
+Player_3 is on position St. Charles Place
+Player_3 payed 10$ to Player_3
+_________________________________________________________This was turn number 82In game 1
+Player_1 is on position New York Avenue
+_________________________________________________________This was turn number 83In game 1
+Player_2 is on position Illinois Avenue
+Player_2 payed 20$ to Player_3
+_________________________________________________________This was turn number 84In game 1
+Player_3 is on position New York Avenue
+Player_3 bought New York Avenue
+_________________________________________________________This was turn number 85In game 1
+Player_1 is on position Water Works
+Player_1 payed 0$ to Player_2
+_________________________________________________________This was turn number 86In game 1
+Player_2 is on position Water Works
+Player_2 payed 0$ to Player_2
+_________________________________________________________This was turn number 87In game 1
+Player_3 is on position Indiana Avenue
+Player_3 payed 18$ to Player_2
+_________________________________________________________This was turn number 88In game 1
+Player_1 is on position Park Place
+_________________________________________________________This was turn number 89In game 1
+Player_2 is on position Community chest
+_________________________________________________________This was turn number 90In game 1
+Player_3 is on position Marvin Gardens
+_________________________________________________________This was turn number 91In game 1
+Player_1 is on position Mediterranean Avenue
+Player_1 bought Mediterranean Avenue
+_________________________________________________________This was turn number 92In game 1
+Player_2 is on position Baltic Avenue
+Player_2 payed 4$ to Player_1
+_________________________________________________________This was turn number 93In game 1
+Player_3 is on position Boardwalk
+Player_3 payed 50$ to Player_3
+_________________________________________________________This was turn number 94In game 1
+Player_1 is on position Reading Railroad
+Player_1 payed 25$ to Player_2
+_________________________________________________________This was turn number 95In game 1
+Player_2 is on position States Avenue
+Player_2 payed 10$ to Player_1
+_________________________________________________________This was turn number 96In game 1
+Player_3 is on position Income Tax
+_________________________________________________________This was turn number 97In game 1
+Player_3 could not pay PlayerBank and has lost.
+Player_2 is on position New York Avenue
+Player_2 bought New York Avenue
+_________________________________________________________This was turn number 98In game 1
+Player_1 is on position Jail (visit)
+_________________________________________________________This was turn number 99In game 1
+Player_2 is on position Illinois Avenue
+_________________________________________________________This was turn number 100In game 1
+Player_1 is on position Pennsylvania Railroad
+Player_1 payed 25$ to Player_1
+_________________________________________________________This was turn number 101In game 1
+Player_2 is on position Short Line
+_________________________________________________________This was turn number 102In game 1
+Player_1 is on position Kentucky Avenue
+Player_1 payed 18$ to Player_1
+_________________________________________________________This was turn number 103In game 1
+Player_2 is on position Oriental Avenue
+Player_2 payed 6$ to Player_2
+_________________________________________________________This was turn number 104In game 1
+Player_1 is on position Atlantic Avenue
+Player_1 payed 22$ to Player_2
+_________________________________________________________This was turn number 105In game 1
+Player_2 is on position St. James Place
+Player_2 payed 14$ to Player_2
+_________________________________________________________This was turn number 106In game 1
+Player_1 is on position Pacific Avenue
+_________________________________________________________This was turn number 107In game 1
+Player_2 is on position New York Avenue
+Player_2 payed 16$ to Player_2
+_________________________________________________________This was turn number 108In game 1
+Player_1 is on position Jail (visit)
+_________________________________________________________This was turn number 109In game 1
+Player_2 is on position Atlantic Avenue
+Player_2 payed 22$ to Player_2
+_________________________________________________________This was turn number 110In game 1
+Player_1 is on position Chance
+_________________________________________________________This was turn number 111In game 1
+Player_2 is on position Community chest
+_________________________________________________________This was turn number 112In game 1
+Player_1 is on position Marvin Gardens
+_________________________________________________________This was turn number 113In game 1
+Player_2 is on position Short Line
+_________________________________________________________This was turn number 114In game 1
+Player_1 is on position Park Place
+_________________________________________________________This was turn number 115In game 1
+Player_2 is on position Luxury Tax
+_________________________________________________________This was turn number 116In game 1
+Player_2 could not pay PlayerBank and has lost.
+Winner = 1
+Player_1 is on position Vermont Avenue
+Player_1 bought Vermont Avenue
+_________________________________________________________This was turn number 0In game 2
+Player_3 is on position Oriental Avenue
+Player_3 bought Oriental Avenue
+_________________________________________________________This was turn number 1In game 2
+Player_2 is on position Baltic Avenue
+Player_2 bought Baltic Avenue
+_________________________________________________________This was turn number 2In game 2
+Player_1 is on position St. James Place
+Player_1 bought St. James Place
+_________________________________________________________This was turn number 3In game 2
+Player_3 is on position St. Charles Place
+Player_3 bought St. Charles Place
+_________________________________________________________This was turn number 4In game 2
+Player_2 is on position Jail (visit)
+_________________________________________________________This was turn number 5In game 2
+Player_1 is on position Free Parking
+_________________________________________________________This was turn number 6In game 2
+Player_3 is on position Tennessee Avenue
+Player_3 bought Tennessee Avenue
+_________________________________________________________This was turn number 7In game 2
+Player_2 is on position St. James Place
+Player_2 payed 14$ to Player_1
+_________________________________________________________This was turn number 8In game 2
+Player_1 is on position Jail (visit)
+_________________________________________________________This was turn number 9In game 2
+Player_3 is on position Atlantic Avenue
+Player_3 bought Atlantic Avenue
+_________________________________________________________This was turn number 10In game 2
+Player_2 is on position Kentucky Avenue
+Player_2 bought Kentucky Avenue
+_________________________________________________________This was turn number 11In game 2
+Player_1 is on position Community chest
+_________________________________________________________This was turn number 13In game 2
+Player_3 is on position Reading Railroad
+Player_3 bought Reading Railroad
+_________________________________________________________This was turn number 14In game 2
+Player_2 is on position Marvin Gardens
+Player_2 bought Marvin Gardens
+_________________________________________________________This was turn number 15In game 2
+Player_1 is on position Indiana Avenue
+Player_1 bought Indiana Avenue
+_________________________________________________________This was turn number 16In game 2
+Player_3 is on position Electric Company
+Player_3 bought Electric Company
+_________________________________________________________This was turn number 17In game 2
+Player_2 is on position Illinois Avenue
+Player_2 bought Illinois Avenue
+_________________________________________________________This was turn number 18In game 2
+Player_1 is on position Pacific Avenue
+Player_1 bought Pacific Avenue
+_________________________________________________________This was turn number 19In game 2
+Player_3 is on position Go
+_________________________________________________________This was turn number 20In game 2
+Player_2 is on position Marvin Gardens
+Player_2 payed 24$ to Player_2
+_________________________________________________________This was turn number 21In game 2
+Player_1 is on position Short Line
+Player_1 bought Short Line
+_________________________________________________________This was turn number 22In game 2
+Player_3 is on position Income Tax
+_________________________________________________________This was turn number 23In game 2
+Player_2 is on position Chance
+_________________________________________________________This was turn number 24In game 2
+Player_1 is on position Mediterranean Avenue
+Player_1 bought Mediterranean Avenue
+_________________________________________________________This was turn number 25In game 2
+Player_3 is on position Virginia Avenue
+Player_3 bought Virginia Avenue
+_________________________________________________________This was turn number 26In game 2
+Player_2 is on position Boardwalk
+Player_2 bought Boardwalk
+_________________________________________________________This was turn number 27In game 2
+Player_1 is on position Connecticut Avenue
+Player_1 bought Connecticut Avenue
+_________________________________________________________This was turn number 28In game 2
+Player_3 is on position Kentucky Avenue
+Player_3 payed 18$ to Player_2
+_________________________________________________________This was turn number 29In game 2
+Player_2 is on position Community chest
+_________________________________________________________This was turn number 30In game 2
+Player_1 is on position St. James Place
+Player_1 payed 14$ to Player_1
+_________________________________________________________This was turn number 31In game 2
+Player_3 is on position B+O Railroad
+Player_3 bought B+O Railroad
+_________________________________________________________This was turn number 32In game 2
+Player_2 is on position Reading Railroad
+Player_2 payed 25$ to Player_3
+_________________________________________________________This was turn number 33In game 2
+Player_1 is on position B+O Railroad
+Player_1 payed 25$ to Player_3
+_________________________________________________________This was turn number 34In game 2
+Player_3 is on position Short Line
+Player_3 payed 25$ to Player_1
+_________________________________________________________This was turn number 35In game 2
+Player_2 is on position St. Charles Place
+Player_2 payed 10$ to Player_3
+_________________________________________________________This was turn number 36In game 2
+Player_1 is on position Community chest
+_________________________________________________________This was turn number 37In game 2
+Player_3 is on position Community chest
+_________________________________________________________This was turn number 38In game 2
+Player_2 is on position Pennsylvania Railroad
+Player_2 bought Pennsylvania Railroad
+_________________________________________________________This was turn number 39In game 2
+Player_1 is on position Reading Railroad
+Player_1 payed 25$ to Player_3
+_________________________________________________________This was turn number 40In game 2
+Player_3 is on position Income Tax
+_________________________________________________________This was turn number 41In game 2
+Player_2 is on position Indiana Avenue
+Player_2 payed 18$ to Player_1
+_________________________________________________________This was turn number 42In game 2
+Player_1 is on position Connecticut Avenue
+Player_1 payed 8$ to Player_1
+_________________________________________________________This was turn number 43In game 2
+Player_3 is on position Electric Company
+Player_3 payed 0$ to Player_3
+_________________________________________________________This was turn number 44In game 2
+Player_2 is on position Pennsylvania Avenue
+_________________________________________________________This was turn number 45In game 2
+Player_1 is on position New York Avenue
+Player_1 bought New York Avenue
+_________________________________________________________This was turn number 46In game 2
+Player_3 is on position New York Avenue
+Player_3 payed 16$ to Player_1
+_________________________________________________________This was turn number 47In game 2
+Player_2 is on position Luxury Tax
+_________________________________________________________This was turn number 48In game 2
+Player_2 could not pay PlayerBank and has lost.
+Player_3 is on position Ventnor Avenue
+_________________________________________________________This was turn number 49In game 2
+Player_1 is on position Marvin Gardens
+_________________________________________________________This was turn number 50In game 2
+Player_3 is on position Short Line
+Player_3 payed 25$ to Player_1
+_________________________________________________________This was turn number 51In game 2
+Player_1 is on position Luxury Tax
+_________________________________________________________This was turn number 52In game 2
+Player_1 could not pay PlayerBank and has lost.
+Winner = 3
+Player_3 is on position Chance
+_________________________________________________________This was turn number 0In game 3
+Player_2 is on position Vermont Avenue
+Player_2 bought Vermont Avenue
+_________________________________________________________This was turn number 1In game 3
+Player_1 is on position Income Tax
+_________________________________________________________This was turn number 2In game 3
+Player_3 is on position New York Avenue
+Player_3 bought New York Avenue
+_________________________________________________________This was turn number 3In game 3
+Player_2 is on position St. James Place
+Player_2 bought St. James Place
+_________________________________________________________This was turn number 4In game 3
+Player_1 is on position St. Charles Place
+Player_1 bought St. Charles Place
+_________________________________________________________This was turn number 5In game 3
+Player_3 is on position B+O Railroad
+Player_3 bought B+O Railroad
+_________________________________________________________This was turn number 6In game 3
+Player_2 is on position Illinois Avenue
+Player_2 bought Illinois Avenue
+_________________________________________________________This was turn number 7In game 3
+Player_1 is on position Tennessee Avenue
+Player_1 bought Tennessee Avenue
+_________________________________________________________This was turn number 8In game 3
+Player_3 is on position Jail (visit)
+_________________________________________________________This was turn number 9In game 3
+Player_2 is on position Marvin Gardens
+Player_2 bought Marvin Gardens
+_________________________________________________________This was turn number 10In game 3
+Player_1 is on position Illinois Avenue
+Player_1 payed 20$ to Player_2
+_________________________________________________________This was turn number 11In game 3
+Player_3 is on position Community chest
+_________________________________________________________This was turn number 13In game 3
+Player_2 is on position Community chest
+_________________________________________________________This was turn number 14In game 3
+Player_1 is on position Pennsylvania Avenue
+Player_1 bought Pennsylvania Avenue
+_________________________________________________________This was turn number 15In game 3
+Player_3 is on position Chance
+_________________________________________________________This was turn number 16In game 3
+Player_2 is on position Baltic Avenue
+Player_2 bought Baltic Avenue
+_________________________________________________________This was turn number 17In game 3
+Player_1 is on position Baltic Avenue
+Player_1 payed 4$ to Player_2
+_________________________________________________________This was turn number 18In game 3
+Player_3 is on position Community chest
+_________________________________________________________This was turn number 19In game 3
+Player_2 is on position Chance
+_________________________________________________________This was turn number 20In game 3
+Player_1 is on position Connecticut Avenue
+Player_1 bought Connecticut Avenue
+_________________________________________________________This was turn number 21In game 3
+Player_3 is on position Baltic Avenue
+Player_3 payed 4$ to Player_2
+_________________________________________________________This was turn number 22In game 3
+Player_2 is on position Community chest
+_________________________________________________________This was turn number 23In game 3
+Player_1 is on position Kentucky Avenue
+Player_1 bought Kentucky Avenue
+_________________________________________________________This was turn number 24In game 3
+Player_3 is on position Electric Company
+Player_3 bought Electric Company
+_________________________________________________________This was turn number 25In game 3
+Player_2 is on position Ventnor Avenue
+Player_2 bought Ventnor Avenue
+_________________________________________________________This was turn number 26In game 3
+Player_1 is on position Ventnor Avenue
+Player_1 payed 22$ to Player_2
+_________________________________________________________This was turn number 27In game 3
+Player_3 is on position Free Parking
+_________________________________________________________This was turn number 28In game 3
+Player_2 is on position St. Charles Place
+Player_2 payed 10$ to Player_1
+_________________________________________________________This was turn number 29In game 3
+Player_1 is on position North Carolina Avenue
+_________________________________________________________This was turn number 30In game 3
+Player_3 is on position Illinois Avenue
+Player_3 payed 20$ to Player_2
+_________________________________________________________This was turn number 31In game 3
+Player_2 is on position Kentucky Avenue
+Player_2 payed 18$ to Player_1
+_________________________________________________________This was turn number 32In game 3
+Player_1 is on position Luxury Tax
+_________________________________________________________This was turn number 33In game 3
+Player_3 is on position North Carolina Avenue
+Player_3 bought North Carolina Avenue
+_________________________________________________________This was turn number 34In game 3
+Player_2 is on position Atlantic Avenue
+Player_2 bought Atlantic Avenue
+_________________________________________________________This was turn number 35In game 3
+Player_1 is on position Baltic Avenue
+Player_1 payed 4$ to Player_2
+_________________________________________________________This was turn number 36In game 3
+Player_3 is on position Luxury Tax
+_________________________________________________________This was turn number 37In game 3
+Player_2 is on position Pennsylvania Avenue
+Player_2 payed 28$ to Player_1
+_________________________________________________________This was turn number 38In game 3
+Player_1 is on position Jail (visit)
+_________________________________________________________This was turn number 39In game 3
+Player_3 is on position Income Tax
+_________________________________________________________This was turn number 40In game 3
+Player_2 is on position Reading Railroad
+Player_2 bought Reading Railroad
+_________________________________________________________This was turn number 41In game 3
+Player_1 is on position St. James Place
+Player_1 payed 14$ to Player_2
+_________________________________________________________This was turn number 42In game 3
+Player_3 is on position St. James Place
+Player_3 payed 14$ to Player_2
+_________________________________________________________This was turn number 43In game 3
+Player_2 is on position States Avenue
+_________________________________________________________This was turn number 44In game 3
+Player_1 is on position Kentucky Avenue
+Player_1 payed 18$ to Player_1
+_________________________________________________________This was turn number 45In game 3
+Player_3 is on position Illinois Avenue
+Player_3 payed 20$ to Player_2
+_________________________________________________________This was turn number 46In game 3
+Player_2 is on position B+O Railroad
+Player_2 payed 25$ to Player_3
+_________________________________________________________This was turn number 47In game 3
+Player_1 is on position B+O Railroad
+Player_1 payed 25$ to Player_3
+_________________________________________________________This was turn number 48In game 3
+Player_3 is on position Pennsylvania Avenue
+Player_3 payed 28$ to Player_1
+_________________________________________________________This was turn number 49In game 3
+Player_2 is on position Pennsylvania Avenue
+Player_2 payed 28$ to Player_1
+_________________________________________________________This was turn number 50In game 3
+Player_1 is on position Jail (visit)
+_________________________________________________________This was turn number 51In game 3
+Player_3 is on position Income Tax
+_________________________________________________________This was turn number 52In game 3
+Player_3 could not pay PlayerBank and has lost.
+Player_1 is on position St. James Place
+Player_1 payed 14$ to Player_2
+_________________________________________________________This was turn number 54In game 3
+Player_2 is on position Reading Railroad
+Player_2 payed 25$ to Player_2
+_________________________________________________________This was turn number 55In game 3
+Player_1 is on position Free Parking
+_________________________________________________________This was turn number 56In game 3
+Player_2 is on position Electric Company
+_________________________________________________________This was turn number 57In game 3
+Player_1 is on position Water Works
+_________________________________________________________This was turn number 58In game 3
+Player_2 is on position New York Avenue
+_________________________________________________________This was turn number 59In game 3
+Player_1 is on position Short Line
+_________________________________________________________This was turn number 60In game 3
+Player_2 is on position Atlantic Avenue
+Player_2 payed 22$ to Player_2
+_________________________________________________________This was turn number 61In game 3
+Player_1 is on position Reading Railroad
+Player_1 payed 25$ to Player_2
+_________________________________________________________This was turn number 62In game 3
+Player_2 is on position Marvin Gardens
+Player_2 payed 24$ to Player_2
+_________________________________________________________This was turn number 63In game 3
+Player_1 is on position Community chest
+_________________________________________________________This was turn number 64In game 3
+Player_2 is on position Park Place
+_________________________________________________________This was turn number 65In game 3
+Player_1 is on position Illinois Avenue
+Player_1 payed 20$ to Player_2
+_________________________________________________________This was turn number 66In game 3
+Player_2 is on position Reading Railroad
+Player_2 payed 25$ to Player_2
+_________________________________________________________This was turn number 67In game 3
+Player_1 is on position Reading Railroad
+Player_1 payed 25$ to Player_2
+_________________________________________________________This was turn number 68In game 3
+Player_2 is on position Connecticut Avenue
+Player_2 payed 8$ to Player_1
+_________________________________________________________This was turn number 69In game 3
+Player_1 is on position Electric Company
+Player_1 bought Electric Company
+_________________________________________________________This was turn number 70In game 3
+Player_2 is on position States Avenue
+_________________________________________________________This was turn number 71In game 3
+Player_1 is on position St. James Place
+Player_1 payed 14$ to Player_2
+_________________________________________________________This was turn number 72In game 3
+Player_2 is on position Illinois Avenue
+Player_2 payed 20$ to Player_2
+_________________________________________________________This was turn number 73In game 3
+Player_1 is on position Illinois Avenue
+Player_1 payed 20$ to Player_2
+_________________________________________________________This was turn number 74In game 3
+Player_2 is on position Atlantic Avenue
+Player_2 payed 22$ to Player_2
+_________________________________________________________This was turn number 75In game 3
+Player_1 is on position Go
+_________________________________________________________This was turn number 76In game 3
+Player_2 is on position Community chest
+_________________________________________________________This was turn number 77In game 3
+Player_1 is on position Income Tax
+_________________________________________________________This was turn number 78In game 3
+Player_2 is on position Baltic Avenue
+Player_2 payed 4$ to Player_2
+_________________________________________________________This was turn number 79In game 3
+Player_1 is on position Jail (visit)
+_________________________________________________________This was turn number 80In game 3
+Player_2 is on position Vermont Avenue
+Player_2 payed 6$ to Player_2
+_________________________________________________________This was turn number 81In game 3
+Player_1 is on position St. James Place
+Player_1 payed 14$ to Player_2
+_________________________________________________________This was turn number 82In game 3
+Player_2 is on position St. James Place
+Player_2 payed 14$ to Player_2
+_________________________________________________________This was turn number 83In game 3
+Player_1 is on position Atlantic Avenue
+Player_1 payed 22$ to Player_2
+_________________________________________________________This was turn number 84In game 3
+Player_2 is on position Illinois Avenue
+Player_2 payed 20$ to Player_2
+_________________________________________________________This was turn number 85In game 3
+Player_1 is on position Marvin Gardens
+Player_1 payed 24$ to Player_2
+_________________________________________________________This was turn number 86In game 3
+Player_2 is on position Jail (visit)
+_________________________________________________________This was turn number 87In game 3
+Player_1 is on position Short Line
+Player_1 bought Short Line
+_________________________________________________________This was turn number 88In game 3
+Player_2 is on position Go
+_________________________________________________________This was turn number 89In game 3
+Player_1 is on position Go
+_________________________________________________________This was turn number 90In game 3
+Player_2 is on position Connecticut Avenue
+Player_2 payed 8$ to Player_1
+_________________________________________________________This was turn number 91In game 3
+Player_1 is on position Jail (visit)
+_________________________________________________________This was turn number 92In game 3
+Player_2 is on position St. James Place
+Player_2 payed 14$ to Player_2
+_________________________________________________________This was turn number 93In game 3
+Player_1 is on position Virginia Avenue
+Player_1 bought Virginia Avenue
+_________________________________________________________This was turn number 94In game 3
+Player_2 is on position Chance
+_________________________________________________________This was turn number 95In game 3
+Player_1 is on position Indiana Avenue
+_________________________________________________________This was turn number 96In game 3
+Player_2 is on position Marvin Gardens
+Player_2 payed 24$ to Player_2
+_________________________________________________________This was turn number 97In game 3
+Player_1 is on position Community chest
+_________________________________________________________This was turn number 98In game 3
+Player_2 is on position North Carolina Avenue
+Player_2 bought North Carolina Avenue
+_________________________________________________________This was turn number 99In game 3
+Player_1 is on position Baltic Avenue
+Player_1 payed 4$ to Player_2
+_________________________________________________________This was turn number 100In game 3
+Player_2 is on position Go
+_________________________________________________________This was turn number 101In game 3
+Player_1 is on position Electric Company
+Player_1 payed 0$ to Player_1
+_________________________________________________________This was turn number 102In game 3
+Player_2 is on position Connecticut Avenue
+Player_2 payed 8$ to Player_1
+_________________________________________________________This was turn number 103In game 3
+Player_1 is on position Community chest
+_________________________________________________________This was turn number 104In game 3
+Player_2 is on position St. James Place
+Player_2 payed 14$ to Player_2
+_________________________________________________________This was turn number 105In game 3
+Player_1 is on position Indiana Avenue
+_________________________________________________________This was turn number 106In game 3
+Player_2 is on position Indiana Avenue
+Player_2 bought Indiana Avenue
+_________________________________________________________This was turn number 107In game 3
+Player_1 is on position Atlantic Avenue
+Player_1 payed 22$ to Player_2
+_________________________________________________________This was turn number 108In game 3
+Player_2 is on position Ventnor Avenue
+Player_2 payed 22$ to Player_2
+_________________________________________________________This was turn number 109In game 3
+Player_1 is on position Jail (visit)
+_________________________________________________________This was turn number 110In game 3
+Player_2 is on position Community chest
+_________________________________________________________This was turn number 111In game 3
+Player_1 is on position Tennessee Avenue
+Player_1 payed 14$ to Player_1
+_________________________________________________________This was turn number 113In game 3
+Player_2 is on position Go
+_________________________________________________________This was turn number 114In game 3
+Player_1 is on position Ventnor Avenue
+Player_1 payed 22$ to Player_2
+_________________________________________________________This was turn number 115In game 3
+Player_2 is on position Connecticut Avenue
+Player_2 payed 8$ to Player_1
+_________________________________________________________This was turn number 116In game 3
+Player_1 is on position Pennsylvania Avenue
+Player_1 payed 28$ to Player_1
+_________________________________________________________This was turn number 117In game 3
+Player_2 is on position Community chest
+_________________________________________________________This was turn number 118In game 3
+Player_1 is on position Income Tax
+_________________________________________________________This was turn number 119In game 3
+Player_1 could not pay PlayerBank and has lost.
+Winner = 2
+Player_2 is on position Income Tax
+_________________________________________________________This was turn number 0In game 4
+Player_3 is on position Jail (visit)
+_________________________________________________________This was turn number 1In game 4
+Player_1 is on position Connecticut Avenue
+Player_1 bought Connecticut Avenue
+_________________________________________________________This was turn number 2In game 4
+Player_2 is on position St. Charles Place
+Player_2 bought St. Charles Place
+_________________________________________________________This was turn number 3In game 4
+Player_3 is on position Community chest
+_________________________________________________________This was turn number 4In game 4
+Player_1 is on position Electric Company
+Player_1 bought Electric Company
+_________________________________________________________This was turn number 5In game 4
+Player_2 is on position Kentucky Avenue
+Player_2 bought Kentucky Avenue
+_________________________________________________________This was turn number 6In game 4
+Player_3 is on position Water Works
+Player_3 bought Water Works
+_________________________________________________________This was turn number 7In game 4
+Player_1 is on position Tennessee Avenue
+Player_1 bought Tennessee Avenue
+_________________________________________________________This was turn number 8In game 4
+Player_2 is on position Ventnor Avenue
+Player_2 bought Ventnor Avenue
+_________________________________________________________This was turn number 9In game 4
+Player_3 is on position North Carolina Avenue
+Player_3 bought North Carolina Avenue
+_________________________________________________________This was turn number 10In game 4
+Player_1 is on position Chance
+_________________________________________________________This was turn number 11In game 4
+Player_2 is on position Electric Company
+Player_2 payed 0$ to Player_1
+_________________________________________________________This was turn number 12In game 4
+Player_3 is on position Mediterranean Avenue
+Player_3 bought Mediterranean Avenue
+_________________________________________________________This was turn number 13In game 4
+Player_1 is on position B+O Railroad
+Player_1 bought B+O Railroad
+_________________________________________________________This was turn number 14In game 4
+Player_2 is on position B+O Railroad
+Player_2 payed 25$ to Player_1
+_________________________________________________________This was turn number 15In game 4
+Player_3 is on position St. Charles Place
+Player_3 payed 10$ to Player_2
+_________________________________________________________This was turn number 16In game 4
+Player_1 is on position Park Place
+Player_1 bought Park Place
+_________________________________________________________This was turn number 17In game 4
+Player_2 is on position Short Line
+Player_2 bought Short Line
+_________________________________________________________This was turn number 18In game 4
+Player_3 is on position Tennessee Avenue
+Player_3 payed 14$ to Player_1
+_________________________________________________________This was turn number 19In game 4
+Player_1 is on position Income Tax
+_________________________________________________________This was turn number 20In game 4
+Player_2 is on position Reading Railroad
+Player_2 bought Reading Railroad
+_________________________________________________________This was turn number 21In game 4
+Player_3 is on position Atlantic Avenue
+Player_3 bought Atlantic Avenue
+_________________________________________________________This was turn number 22In game 4
+Player_1 is on position St. Charles Place
+Player_1 payed 10$ to Player_2
+_________________________________________________________This was turn number 23In game 4
+Player_2 is on position St. Charles Place
+Player_2 payed 10$ to Player_2
+_________________________________________________________This was turn number 24In game 4
+Player_3 is on position Jail (visit)
+_________________________________________________________This was turn number 25In game 4
+Player_1 is on position Virginia Avenue
+Player_1 bought Virginia Avenue
+_________________________________________________________This was turn number 26In game 4
+Player_2 is on position States Avenue
+Player_2 bought States Avenue
+_________________________________________________________This was turn number 27In game 4
+Player_3 is on position Free Parking
+_________________________________________________________This was turn number 29In game 4
+Player_1 is on position Indiana Avenue
+_________________________________________________________This was turn number 30In game 4
+Player_2 is on position Tennessee Avenue
+Player_2 payed 14$ to Player_1
+_________________________________________________________This was turn number 31In game 4
+Player_3 is on position B+O Railroad
+Player_3 payed 25$ to Player_1
+_________________________________________________________This was turn number 32In game 4
+Player_1 is on position Marvin Gardens
+_________________________________________________________This was turn number 33In game 4
+Player_2 is on position Illinois Avenue
+Player_2 bought Illinois Avenue
+_________________________________________________________This was turn number 34In game 4
+Player_3 is on position North Carolina Avenue
+Player_3 payed 26$ to Player_3
+_________________________________________________________This was turn number 35In game 4
+Player_1 is on position Park Place
+Player_1 payed 35$ to Player_1
+_________________________________________________________This was turn number 36In game 4
+Player_2 is on position Community chest
+_________________________________________________________This was turn number 37In game 4
+Player_3 is on position Baltic Avenue
+Player_3 bought Baltic Avenue
+_________________________________________________________This was turn number 38In game 4
+Player_1 is on position Income Tax
+_________________________________________________________This was turn number 39In game 4
+Player_2 is on position Boardwalk
+_________________________________________________________This was turn number 40In game 4
+Player_3 is on position Connecticut Avenue
+Player_3 payed 8$ to Player_1
+_________________________________________________________This was turn number 41In game 4
+Player_1 is on position Vermont Avenue
+_________________________________________________________This was turn number 42In game 4
+Player_2 is on position Vermont Avenue
+_________________________________________________________This was turn number 43In game 4
+Player_3 is on position Tennessee Avenue
+Player_3 payed 14$ to Player_1
+_________________________________________________________This was turn number 44In game 4
+Player_1 is on position States Avenue
+Player_1 payed 10$ to Player_2
+_________________________________________________________This was turn number 45In game 4
+Player_2 is on position St. James Place
+_________________________________________________________This was turn number 46In game 4
+Player_3 is on position B+O Railroad
+Player_3 payed 25$ to Player_1
+_________________________________________________________This was turn number 47In game 4
+Player_1 is on position Tennessee Avenue
+Player_1 payed 14$ to Player_1
+_________________________________________________________This was turn number 48In game 4
+Player_2 is on position Tennessee Avenue
+Player_2 payed 14$ to Player_1
+_________________________________________________________This was turn number 49In game 4
+Player_3 is on position Pacific Avenue
+Player_3 bought Pacific Avenue
+_________________________________________________________This was turn number 50In game 4
+Player_1 is on position Atlantic Avenue
+Player_1 payed 22$ to Player_3
+_________________________________________________________This was turn number 51In game 4
+Player_2 is on position Illinois Avenue
+Player_2 payed 20$ to Player_2
+_________________________________________________________This was turn number 52In game 4
+Player_3 is on position Park Place
+Player_3 payed 35$ to Player_1
+_________________________________________________________This was turn number 53In game 4
+Player_1 is on position Pennsylvania Avenue
+_________________________________________________________This was turn number 54In game 4
+Player_2 is on position Pacific Avenue
+Player_2 payed 26$ to Player_3
+_________________________________________________________This was turn number 55In game 4
+Player_3 is on position Income Tax
+_________________________________________________________This was turn number 56In game 4
+Player_1 is on position Boardwalk
+_________________________________________________________This was turn number 57In game 4
+Player_2 is on position Community chest
+_________________________________________________________This was turn number 58In game 4
+Player_3 is on position Vermont Avenue
+_________________________________________________________This was turn number 59In game 4
+Player_1 is on position Reading Railroad
+Player_1 payed 25$ to Player_2
+_________________________________________________________This was turn number 60In game 4
+Player_2 is on position States Avenue
+Player_2 payed 10$ to Player_2
+_________________________________________________________This was turn number 61In game 4
+Player_3 is on position States Avenue
+Player_3 payed 10$ to Player_2
+_________________________________________________________This was turn number 62In game 4
+Player_1 is on position Vermont Avenue
+_________________________________________________________This was turn number 63In game 4
+Player_2 is on position Illinois Avenue
+Player_2 payed 20$ to Player_2
+_________________________________________________________This was turn number 64In game 4
+Player_3 is on position Pennsylvania Railroad
+_________________________________________________________This was turn number 65In game 4
+Player_1 is on position St. James Place
+_________________________________________________________This was turn number 66In game 4
+Player_2 is on position Pacific Avenue
+Player_2 payed 26$ to Player_3
+_________________________________________________________This was turn number 67In game 4
+Player_3 is on position Indiana Avenue
+_________________________________________________________This was turn number 68In game 4
+Player_1 is on position Free Parking
+_________________________________________________________This was turn number 69In game 4
+Player_2 is on position Park Place
+Player_2 payed 35$ to Player_1
+_________________________________________________________This was turn number 70In game 4
+Player_3 is on position Atlantic Avenue
+Player_3 payed 22$ to Player_3
+_________________________________________________________This was turn number 71In game 4
+Player_1 is on position Illinois Avenue
+Player_1 payed 20$ to Player_2
+_________________________________________________________This was turn number 72In game 4
+Player_2 is on position Baltic Avenue
+Player_2 payed 4$ to Player_3
+_________________________________________________________This was turn number 73In game 4
+Player_3 is on position Luxury Tax
+_________________________________________________________This was turn number 74In game 4
+Player_3 could not pay PlayerBank and has lost.
+Player_2 is on position Vermont Avenue
+_________________________________________________________This was turn number 75In game 4
+Player_1 is on position North Carolina Avenue
+_________________________________________________________This was turn number 76In game 4
+Player_2 is on position St. Charles Place
+Player_2 payed 10$ to Player_2
+_________________________________________________________This was turn number 77In game 4
+Player_1 is on position Community chest
+_________________________________________________________This was turn number 78In game 4
+Player_2 is on position Jail (visit)
+_________________________________________________________This was turn number 79In game 4
+Player_1 is on position Jail (visit)
+_________________________________________________________This was turn number 80In game 4
+Player_2 is on position Free Parking
+_________________________________________________________This was turn number 81In game 4
+Player_1 is on position New York Avenue
+_________________________________________________________This was turn number 82In game 4
+Player_2 is on position Marvin Gardens
+_________________________________________________________This was turn number 83In game 4
+Player_1 is on position Ventnor Avenue
+Player_1 payed 22$ to Player_2
+_________________________________________________________This was turn number 84In game 4
+Player_2 is on position Chance
+_________________________________________________________This was turn number 85In game 4
+Player_1 is on position Park Place
+Player_1 payed 35$ to Player_1
+_________________________________________________________This was turn number 86In game 4
+Player_2 is on position Baltic Avenue
+Player_2 bought Baltic Avenue
+_________________________________________________________This was turn number 87In game 4
+Player_1 is on position Income Tax
+_________________________________________________________This was turn number 88In game 4
+Player_1 could not pay PlayerBank and has lost.
+Winner = 2
+Player_2 is on position Reading Railroad
+Player_2 bought Reading Railroad
+_________________________________________________________This was turn number 0In game 5
+Player_3 is on position Vermont Avenue
+Player_3 bought Vermont Avenue
+_________________________________________________________This was turn number 1In game 5
+Player_1 is on position St. Charles Place
+Player_1 bought St. Charles Place
+_________________________________________________________This was turn number 2In game 5
+Player_2 is on position St. Charles Place
+Player_2 payed 10$ to Player_1
+_________________________________________________________This was turn number 3In game 5
+Player_3 is on position Jail (visit)
+_________________________________________________________This was turn number 4In game 5
+Player_1 is on position Virginia Avenue
+Player_1 bought Virginia Avenue
+_________________________________________________________This was turn number 5In game 5
+Player_2 is on position Community chest
+_________________________________________________________This was turn number 6In game 5
+Player_3 is on position Kentucky Avenue
+Player_3 bought Kentucky Avenue
+_________________________________________________________This was turn number 7In game 5
+Player_1 is on position Kentucky Avenue
+Player_1 payed 18$ to Player_3
+_________________________________________________________This was turn number 8In game 5
+Player_2 is on position Water Works
+Player_2 bought Water Works
+_________________________________________________________This was turn number 9In game 5
+Player_3 is on position B+O Railroad
+Player_3 bought B+O Railroad
+_________________________________________________________This was turn number 10In game 5
+Player_1 is on position Pacific Avenue
+Player_1 bought Pacific Avenue
+_________________________________________________________This was turn number 11In game 5
+Player_2 is on position Park Place
+Player_2 bought Park Place
+_________________________________________________________This was turn number 12In game 5
+Player_3 is on position North Carolina Avenue
+Player_3 bought North Carolina Avenue
+_________________________________________________________This was turn number 13In game 5
+Player_1 is on position Luxury Tax
+_________________________________________________________This was turn number 14In game 5
+Player_2 is on position Jail (visit)
+_________________________________________________________This was turn number 15In game 5
+Player_3 is on position Community chest
+_________________________________________________________This was turn number 16In game 5
+Player_1 is on position Reading Railroad
+Player_1 payed 25$ to Player_2
+_________________________________________________________This was turn number 17In game 5
+Player_2 is on position Free Parking
+_________________________________________________________This was turn number 18In game 5
+Player_3 is on position Income Tax
+_________________________________________________________This was turn number 19In game 5
+Player_1 is on position Virginia Avenue
+Player_1 payed 12$ to Player_1
+_________________________________________________________This was turn number 20In game 5
+Player_2 is on position Pacific Avenue
+Player_2 payed 26$ to Player_1
+_________________________________________________________This was turn number 21In game 5
+Player_3 is on position St. Charles Place
+Player_3 payed 10$ to Player_1
+_________________________________________________________This was turn number 22In game 5
+Player_1 is on position New York Avenue
+Player_1 bought New York Avenue
+_________________________________________________________This was turn number 23In game 5
+Player_2 is on position Luxury Tax
+_________________________________________________________This was turn number 24In game 5
+Player_3 is on position St. James Place
+Player_3 bought St. James Place
+_________________________________________________________This was turn number 25In game 5
+Player_1 is on position Ventnor Avenue
+Player_1 bought Ventnor Avenue
+_________________________________________________________This was turn number 26In game 5
+Player_2 is on position Income Tax
+_________________________________________________________This was turn number 27In game 5
+Player_3 is on position B+O Railroad
+Player_3 payed 25$ to Player_3
+_________________________________________________________This was turn number 28In game 5
+Player_1 is on position Park Place
+Player_1 payed 35$ to Player_2
+_________________________________________________________This was turn number 29In game 5
+Player_2 is on position Jail (visit)
+_________________________________________________________This was turn number 30In game 5
+Player_3 is on position Water Works
+Player_3 payed 0$ to Player_2
+_________________________________________________________This was turn number 31In game 5
+Player_1 is on position Jail (visit)
+_________________________________________________________This was turn number 32In game 5
+Player_2 is on position Free Parking
+_________________________________________________________This was turn number 33In game 5
+Player_3 is on position Park Place
+Player_3 payed 35$ to Player_2
+_________________________________________________________This was turn number 34In game 5
+Player_1 is on position Go
+_________________________________________________________This was turn number 35In game 5
+Player_2 is on position North Carolina Avenue
+Player_2 payed 26$ to Player_3
+_________________________________________________________This was turn number 36In game 5
+Player_3 is on position Baltic Avenue
+Player_3 bought Baltic Avenue
+_________________________________________________________This was turn number 37In game 5
+Player_1 is on position Income Tax
+_________________________________________________________This was turn number 38In game 5
+Player_2 is on position Park Place
+Player_2 payed 35$ to Player_2
+_________________________________________________________This was turn number 39In game 5
+Player_3 is on position States Avenue
+Player_3 bought States Avenue
+_________________________________________________________This was turn number 40In game 5
+Player_1 is on position States Avenue
+Player_1 payed 10$ to Player_3
+_________________________________________________________This was turn number 41In game 5
+Player_2 is on position Vermont Avenue
+Player_2 payed 6$ to Player_3
+_________________________________________________________This was turn number 42In game 5
+Player_3 is on position Community chest
+_________________________________________________________This was turn number 43In game 5
+Player_1 is on position Kentucky Avenue
+Player_1 payed 18$ to Player_3
+_________________________________________________________This was turn number 44In game 5
+Player_2 is on position Tennessee Avenue
+Player_2 bought Tennessee Avenue
+_________________________________________________________This was turn number 45In game 5
+Player_3 is on position Indiana Avenue
+Player_3 bought Indiana Avenue
+_________________________________________________________This was turn number 46In game 5
+Player_1 is on position Water Works
+Player_1 payed 0$ to Player_2
+_________________________________________________________This was turn number 47In game 5
+Player_2 is on position Marvin Gardens
+Player_2 bought Marvin Gardens
+_________________________________________________________This was turn number 48In game 5
+Player_3 is on position Pacific Avenue
+Player_3 payed 26$ to Player_1
+_________________________________________________________This was turn number 49In game 5
+Player_3 could not pay Player1 and has lost.
+Player_2 is on position Chance
+_________________________________________________________This was turn number 50In game 5
+Player_1 is on position North Carolina Avenue
+Player_1 payed 26$ to Player_1
+_________________________________________________________This was turn number 51In game 5
+Player_2 is on position Community chest
+_________________________________________________________This was turn number 52In game 5
+Player_1 is on position Short Line
+Player_1 bought Short Line
+_________________________________________________________This was turn number 53In game 5
+Player_2 is on position Jail (visit)
+_________________________________________________________This was turn number 54In game 5
+Player_1 is on position Boardwalk
+_________________________________________________________This was turn number 55In game 5
+Player_2 is on position Go
+_________________________________________________________This was turn number 56In game 5
+Player_1 is on position Vermont Avenue
+Player_1 payed 6$ to Player_1
+_________________________________________________________This was turn number 57In game 5
+Player_2 is on position Oriental Avenue
+Player_2 bought Oriental Avenue
+_________________________________________________________This was turn number 58In game 5
+Player_1 is on position Virginia Avenue
+Player_1 payed 12$ to Player_1
+_________________________________________________________This was turn number 59In game 5
+Player_2 is on position Jail (visit)
+_________________________________________________________This was turn number 60In game 5
+Player_1 is on position B+O Railroad
+Player_1 payed 25$ to Player_1
+_________________________________________________________This was turn number 61In game 5
+Player_2 is on position Tennessee Avenue
+Player_2 payed 14$ to Player_2
+_________________________________________________________This was turn number 62In game 5
+Player_1 is on position Pacific Avenue
+Player_1 payed 26$ to Player_1
+_________________________________________________________This was turn number 63In game 5
+Player_2 is on position Illinois Avenue
+_________________________________________________________This was turn number 64In game 5
+Player_1 is on position Mediterranean Avenue
+_________________________________________________________This was turn number 65In game 5
+Player_2 is on position Community chest
+_________________________________________________________This was turn number 66In game 5
+Player_1 is on position Oriental Avenue
+Player_1 payed 6$ to Player_2
+_________________________________________________________This was turn number 67In game 5
+Player_2 is on position Go
+_________________________________________________________This was turn number 68In game 5
+Player_1 is on position Virginia Avenue
+Player_1 payed 12$ to Player_1
+_________________________________________________________This was turn number 69In game 5
+Player_2 is on position Connecticut Avenue
+Player_2 bought Connecticut Avenue
+_________________________________________________________This was turn number 70In game 5
+Player_1 is on position Tennessee Avenue
+Player_1 payed 14$ to Player_2
+_________________________________________________________This was turn number 71In game 5
+Player_1 could not pay Player2 and has lost.
+Winner = 2

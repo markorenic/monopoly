@@ -157,7 +157,6 @@ def verify(csv_file): #verifies all the data is correct data type
 def createboard(csv_file):
     board = []
     board.clear
-
     file = open(csv_file) #open file
     csv_file = csv.reader(file) #open file in reader
     next(csv_file) #skips header row
@@ -266,7 +265,6 @@ def getposition(board,chance, community, player):
     position = diceroll(position,0) #call diceroll passing the current position
 
     if board[position].name == "Chance": #if board position is a chance
-
         card = chance.pop(0)    #take a card from the end of the deck
         if len(chance) == 0:    #if the deck is empty, reshuffle from starting community
             chance = resetdeck("chance")
@@ -329,12 +327,14 @@ def getposition(board,chance, community, player):
         if player.jail_pass > 0:#use get out of jail card
             player.jailed = False
             player.jail_pass = player.jail_pass - 1
+
     
-    board[position].stops += 1 #add one stop to position where the player ends his turn
     if position >=40:#get 200 after passing go
         player.balance = player.balance + 200
+    position = position%40
+    board[position].stops += 1 #add one stop to position where the player ends his turn
     
-    return(position%40) #print position at which the player ended that turn)
+    return(position) #print position at which the player ended that turn)
 
 
 
