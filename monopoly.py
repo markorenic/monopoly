@@ -430,12 +430,14 @@ def strategymonopoly():
 ################################################################################################################################################
 
     gamesplayed = 0
+    boardsum = []
     text_file = open("Output.txt", "w")
     while gamesplayed < n_games :
         #start new game
         #reset players game values, 
         #keeping their strategy and wins
         k = 0 #counters
+                
         board = createboard("properties.csv")
         player = players[k]
         while k < len(players):
@@ -536,9 +538,15 @@ def strategymonopoly():
         gamesplayed = gamesplayed + 1
         players = players + playersout
         playersout.clear
-        #sortedresults(board)
-        #plotgraph(board)
-        #plt.close()
+        while k < len(board):
+            try:
+                boardsum[k].stops = boardsum[k].stops + board[k].stops
+            except IndexError:
+                boardsum = board
+                k = 100
+                print(boardsum)
+            k = k + 1
+        print(boardsum)
     
     #sort players by number of wins
     counter = len(players)
@@ -552,18 +560,15 @@ def strategymonopoly():
             if players[j].wins < players[j+1].wins:
                 players[j], players[j+1] = players[j+1], players[j]
 
+
     for i in range(0,counter):
         print("Wins of player ", players[i].name, ": ", players[i].wins)    
         #add sum of each visitt of property after all games
+    sortedresults(boardsum)
+    plotgraph(boardsum)
+    plt.close()
 
 
 #verify the csv file, and initialise board
 verify("properties.csv")
 strategymonopoly()
-
-# __todo_________________________________-
-# add sum of each visit of property at end of game
-# add game finishes after 65 turns and with most total value wins.
-# push to git
-# show atributed of each player according to questions at the end and export data to file if wanted.
-#________________________________________-
