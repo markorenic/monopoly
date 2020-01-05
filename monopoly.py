@@ -328,7 +328,6 @@ def getposition(board,chance, community, player):
             player.jailed = False
             player.jail_pass = player.jail_pass - 1
 
-    
     if position >=40:#get 200 after passing go
         player.balance = player.balance + 200
     position = position%40
@@ -340,7 +339,6 @@ def getposition(board,chance, community, player):
 
 
 def strategymonopoly():
-
 ############################################################OPTIONS##############################################################################
     #initiate number of players
     validation = False
@@ -447,7 +445,6 @@ def strategymonopoly():
             player.jail_pass = 0
             player.jailed = False
             k = k + 1
-
 
         community = resetdeck("community")
         chance = resetdeck("chance")
