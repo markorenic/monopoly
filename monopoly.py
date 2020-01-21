@@ -1,14 +1,16 @@
 #import relavant libraries
-import csv
-import random
-from numbers import Number
-import ctypes
-import matplotlib.pyplot as plt; plt.rcdefaults()
-import numpy as np
-import matplotlib.animation as animation
-try: from matplotlib import style
-except:
-    pass
+try:
+    import os
+    import csv
+    import random
+    from numbers import Number
+    import ctypes
+    import matplotlib.pyplot as plt; plt.rcdefaults()
+    import numpy as np
+    import matplotlib.animation as animation
+    from matplotlib import style
+except ImportError:
+    print("You are missing one of the following dependancies: csv, random, numbers, ctypes, matplotlib, numpy. /n Install using: python -m pip install [dependancy]")
 
 
 def bubble_sort(list): #function to sort objects by number of times stopped on
@@ -543,7 +545,6 @@ def strategymonopoly():
                 k = 100
                 print(boardsum)
             k = k + 1
-        print(boardsum)
     
     #sort players by number of wins
     counter = len(players)
@@ -559,7 +560,7 @@ def strategymonopoly():
 
 
     for i in range(0,counter):
-        print("Wins of player ", players[i].name, ": ", players[i].wins)    
+        print("Wins of player ", players[i].name, ": ", players[i].wins, " Players minimum balance: ",players[i].minbalance)    
         #add sum of each visitt of property after all games
     sortedresults(boardsum)
     plotgraph(boardsum)
